@@ -292,13 +292,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Hero portrait click
-  const heroCard = document.getElementById('hero-portrait-card');
+  // Hero photo click
+  const heroCard = document.getElementById('hero-photo-card') || document.getElementById('hero-portrait-card');
   if (heroCard) {
     heroCard.addEventListener('click', () => {
-      const img = heroCard.querySelector('img');
+      const img = heroCard.querySelector('img') || document.getElementById('hero-photo');
       const src = img ? (img.getAttribute('data-hd-src') || img.src) : 'assets/images/hero.jpg';
-      const caption = img ? (img.getAttribute('data-hd-caption') || 'Baby Arshea • Our Little Fairy Princess') : 'Baby Arshea';
+      const caption = img ? (img.getAttribute('data-hd-caption') || 'Baby Arshea • Our Little Fairy Princess 🌸') : 'Baby Arshea';
       openLightbox(src, caption);
     });
   }

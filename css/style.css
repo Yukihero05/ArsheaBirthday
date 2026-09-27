@@ -229,89 +229,76 @@ body {
 
 .hero-section {
   text-align: center;
-  margin-bottom: 35px;
-  padding-top: 10px;
+  margin-bottom: 40px;
+  padding-top: 15px;
 }
 
-.hero-card {
+.hero-banner-container {
   position: relative;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 246, 249, 0.96) 100%);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-lg);
-  padding: 36px 22px 28px;
-  box-shadow: 0 16px 45px rgba(216, 92, 124, 0.12), 0 2px 10px rgba(0, 0, 0, 0.03);
+  border-radius: 28px;
   overflow: hidden;
+  box-shadow: 0 16px 45px rgba(216, 92, 124, 0.12), 0 3px 12px rgba(0, 0, 0, 0.04);
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  margin-bottom: 30px;
 }
 
-.hero-fairy-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, rgba(255, 235, 242, 0.95), rgba(255, 218, 230, 0.95));
-  border: 1px solid rgba(216, 92, 124, 0.3);
+.hero-banner-img {
+  width: 100%;
+  height: clamp(190px, 35vw, 250px);
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+
+.hero-banner-overlay {
+  padding: 26px 20px 24px;
+  background: rgba(255, 255, 255, 0.98);
+  margin-top: -45px;
+  position: relative;
+  z-index: 2;
+  border-radius: 28px 28px 0 0;
+  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.02);
+}
+
+.hero-tag {
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 5.2vw, 2.5rem);
   color: var(--accent-rose);
-  font-family: var(--font-sans);
-  font-size: 0.82rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 6px 18px;
-  border-radius: 50px;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 12px rgba(216, 92, 124, 0.12);
+  margin-bottom: -4px;
+  line-height: 1.2;
 }
 
 .hero-main-title {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 5.5vw, 2.9rem);
+  font-size: clamp(2.2rem, 5.8vw, 3rem);
   font-weight: 700;
   color: var(--text-dark);
-  line-height: 1.16;
+  line-height: 1.15;
   margin-bottom: 6px;
 }
 
-.hero-title-sub {
-  display: block;
-  font-size: clamp(1.35rem, 3.8vw, 1.95rem);
-  color: var(--accent-rose);
-  font-weight: 600;
-  margin-top: 6px;
-}
-
 .hero-sub-script {
-  font-size: clamp(0.85rem, 2.4vw, 0.98rem);
+  font-size: clamp(0.76rem, 2.2vw, 0.88rem);
   color: var(--text-muted);
-  letter-spacing: 0.5px;
-  margin: 8px auto 26px;
-  max-width: 520px;
-  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 6px;
+  font-weight: 600;
 }
 
-/* Regal Fairy Arch Portrait Frame showcasing Photo 1 */
-.hero-portrait-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto 28px;
-}
-
-.hero-portrait-frame {
+/* Circular Photo Frame with Animated Decorative Ring */
+.hero-photo-wrapper {
   position: relative;
-  width: clamp(240px, 78vw, 340px);
-  aspect-ratio: 3 / 4;
-  border-radius: 170px 170px 24px 24px;
-  overflow: hidden;
-  background: #ffffff;
-  padding: 6px 6px 0;
-  border: 4px solid #ffffff;
-  box-shadow: 0 16px 40px rgba(216, 92, 124, 0.22), 0 0 0 2px rgba(244, 143, 177, 0.5);
+  width: clamp(200px, 48vw, 250px);
+  height: clamp(200px, 48vw, 250px);
+  margin: 30px auto 35px;
   cursor: pointer;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hero-portrait-frame:hover {
-  transform: translateY(-4px) scale(1.015);
-  box-shadow: 0 22px 50px rgba(216, 92, 124, 0.32), 0 0 0 3px rgba(216, 92, 124, 0.7);
+.hero-photo-wrapper:hover {
+  transform: scale(1.03);
 }
 
 .hero-photo-img {
@@ -319,7 +306,9 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center 12%;
-  border-radius: 164px 164px 18px 18px;
+  border-radius: 50%;
+  border: 6px solid #ffffff;
+  box-shadow: 0 14px 38px rgba(216, 92, 124, 0.28);
   display: block;
   image-rendering: auto;
   image-rendering: -webkit-optimize-contrast;
@@ -327,22 +316,14 @@ body {
   backface-visibility: hidden;
 }
 
-.hero-portrait-tag {
+.hero-photo-ring {
   position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(216, 92, 124, 0.25);
-  padding: 6px 16px;
-  border-radius: 50px;
-  font-size: 0.76rem;
-  font-weight: 600;
-  color: var(--accent-rose);
-  white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  letter-spacing: 0.5px;
+  inset: -14px;
+  border: 2.5px dotted #e57399;
+  border-radius: 50%;
+  animation: spinSlow 35s linear infinite;
+  pointer-events: none;
+  box-shadow: 0 0 16px rgba(229, 115, 153, 0.2);
 }
 
 /* Countdown */
@@ -1124,12 +1105,13 @@ img {
     max-width: 780px;
   }
 
-  .hero-card {
-    padding: 44px 36px 36px;
+  .hero-banner-img {
+    height: 250px;
   }
 
-  .hero-portrait-frame {
-    width: 350px;
+  .hero-photo-wrapper {
+    width: 250px;
+    height: 250px;
   }
 
   .gallery-grid {
@@ -1147,8 +1129,13 @@ img {
     padding: 24px 20px 120px;
   }
 
-  .hero-portrait-frame {
-    width: 320px;
+  .hero-banner-img {
+    height: 230px;
+  }
+
+  .hero-photo-wrapper {
+    width: 240px;
+    height: 240px;
   }
 
   .gallery-grid {
@@ -1164,12 +1151,13 @@ img {
     padding: 16px 18px 110px;
   }
 
-  .hero-card {
-    padding: 30px 18px 24px;
+  .hero-banner-img {
+    height: 210px;
   }
 
-  .hero-portrait-frame {
-    width: 290px;
+  .hero-photo-wrapper {
+    width: 220px;
+    height: 220px;
   }
 
   .gallery-grid {
@@ -1186,31 +1174,36 @@ img {
     padding: 12px 14px 105px;
   }
 
-  .hero-card {
-    padding: 26px 14px 20px;
-    border-radius: 24px;
+  .hero-banner-img {
+    height: 180px;
   }
 
-  .hero-fairy-badge {
-    font-size: 0.75rem;
-    padding: 5px 14px;
+  .hero-banner-overlay {
+    padding: 20px 14px 18px;
+    margin-top: -35px;
+  }
+
+  .hero-tag {
+    font-size: 1.85rem;
+  }
+
+  .hero-main-title {
+    font-size: 2.1rem;
+  }
+
+  .hero-sub-script {
+    font-size: 0.78rem;
     letter-spacing: 1.5px;
   }
 
-  .hero-portrait-frame {
-    width: min(290px, 84vw);
-    border-radius: 140px 140px 20px 20px;
-    border-width: 3px;
+  .hero-photo-wrapper {
+    width: 200px;
+    height: 200px;
+    margin: 24px auto 28px;
   }
 
-  .hero-photo-img {
-    border-radius: 136px 136px 16px 16px;
-  }
-
-  .hero-portrait-tag {
-    font-size: 0.72rem;
-    padding: 5px 14px;
-    bottom: 10px;
+  .hero-photo-ring {
+    inset: -10px;
   }
 
   .section-title {
@@ -1295,23 +1288,36 @@ img {
     padding: 10px 10px 95px;
   }
 
-  .hero-card {
-    padding: 22px 10px 18px;
-    border-radius: 20px;
+  .hero-banner-img {
+    height: 150px;
   }
 
-  .hero-portrait-frame {
-    width: min(250px, 86vw);
-    border-radius: 120px 120px 18px 18px;
+  .hero-banner-overlay {
+    padding: 16px 10px 14px;
+    margin-top: -28px;
   }
 
-  .hero-photo-img {
-    border-radius: 116px 116px 14px 14px;
+  .hero-tag {
+    font-size: 1.6rem;
   }
 
-  .hero-portrait-tag {
-    font-size: 0.68rem;
-    padding: 4px 10px;
+  .hero-main-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-sub-script {
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-photo-wrapper {
+    width: 175px;
+    height: 175px;
+    margin: 20px auto 24px;
+  }
+
+  .hero-photo-ring {
+    inset: -8px;
   }
 
   .section-title {
@@ -1434,8 +1440,14 @@ img {
     font-size: 0.88rem;
   }
 
-  .hero-portrait-frame {
-    width: 220px;
+  .hero-banner-img {
+    height: 160px;
+  }
+
+  .hero-photo-wrapper {
+    width: 170px;
+    height: 170px;
+    margin: 20px auto;
   }
 }
 
