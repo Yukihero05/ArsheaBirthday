@@ -5,25 +5,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
 
 :root {
-  --primary-yellow: #f6c845;
-  --soft-yellow: #fef9e7;
-  --accent-gold: #d49520;
-  --dark-gold: #9e6d0a;
-  --bg-gradient: linear-gradient(180deg, #fefcf5 0%, #faf3e0 50%, #fefcf5 100%);
-  --card-bg: rgba(255, 255, 255, 0.92);
-  --card-border: rgba(212, 149, 32, 0.18);
-  --text-dark: #3a3226;
-  --text-muted: #7c7263;
-  --swatch-buttercup: #fce881;
-  --swatch-cream: #fff9e6;
-  --swatch-primrose: #f7e39e;
-  --swatch-honey: #f3c766;
-  --swatch-sunlight: #ffea9f;
+  --primary-pink: #f48fb1;
+  --soft-pink: #fff0f5;
+  --accent-rose: #d85c7c;
+  --dark-rose: #9c2750;
+  --accent-gold: #d85c7c;
+  --dark-gold: #9c2750;
+  --primary-yellow: #f48fb1;
+  --soft-yellow: #fff0f5;
+  --fairy-blush: #fce4ec;
+  --fairy-lavender: #f3e5f5;
+  --bg-gradient: linear-gradient(180deg, #fff7fa 0%, #fbe8ef 50%, #fff7fa 100%);
+  --card-bg: rgba(255, 255, 255, 0.94);
+  --card-border: rgba(216, 92, 124, 0.2);
+  --text-dark: #3a2530;
+  --text-muted: #7d656f;
+  --swatch-blush: #f8b4c4;
+  --swatch-dusty-rose: #d48297;
+  --swatch-mauve: #c997b6;
+  --swatch-cream: #fff5f7;
+  --swatch-peach: #fad2cf;
+  --swatch-baby-pink: #ffd1dc;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Outfit', -apple-system, sans-serif;
   --font-script: 'Great Vibes', cursive;
-  --shadow-soft: 0 10px 30px rgba(184, 150, 80, 0.12);
-  --shadow-card: 0 15px 35px rgba(140, 110, 50, 0.08), 0 5px 15px rgba(0,0,0,0.03);
+  --shadow-soft: 0 10px 30px rgba(216, 92, 124, 0.15);
+  --shadow-card: 0 15px 35px rgba(180, 80, 110, 0.09), 0 5px 15px rgba(0,0,0,0.03);
   --radius-lg: 24px;
   --radius-md: 16px;
   --radius-sm: 10px;
@@ -191,7 +198,7 @@ body {
 }
 
 .btn-open-invitation {
-  background: linear-gradient(135deg, #f6c845 0%, #d49520 100%);
+  background: linear-gradient(135deg, #f48fb1 0%, #d85c7c 100%);
   color: #ffffff;
   border: none;
   padding: 16px 36px;
@@ -199,7 +206,7 @@ body {
   font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(212, 149, 32, 0.35);
+  box-shadow: 0 10px 25px rgba(216, 92, 124, 0.35);
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -208,7 +215,7 @@ body {
 
 .btn-open-invitation:hover {
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 14px 30px rgba(212, 149, 32, 0.45);
+  box-shadow: 0 14px 30px rgba(216, 92, 124, 0.45);
 }
 
 /* Page Layout */
@@ -866,7 +873,7 @@ section {
 
 .btn-submit-rsvp {
   width: 100%;
-  background: linear-gradient(135deg, #f6c845 0%, #d49520 100%);
+  background: linear-gradient(135deg, #f48fb1 0%, #d85c7c 100%);
   color: #ffffff;
   border: none;
   padding: 16px;
@@ -874,13 +881,13 @@ section {
   font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(212, 149, 32, 0.3);
+  box-shadow: 0 8px 20px rgba(216, 92, 124, 0.3);
   transition: all 0.3s ease;
 }
 
 .btn-submit-rsvp:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 25px rgba(212, 149, 32, 0.4);
+  box-shadow: 0 12px 25px rgba(216, 92, 124, 0.4);
 }
 
 .floating-rsvp-bar {

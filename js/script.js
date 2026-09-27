@@ -3,9 +3,12 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const EVENT_DATE = new Date('September 26, 2026 12:00:00').getTime();
+  // Target Event Date: November 14, 2026 Saturday 10:00 AM
+  const EVENT_DATE = new Date('November 14, 2026 10:00:00').getTime();
 
-  // Falling Petals Canvas
+  // --------------------------------------------------------------------------
+  // Magical Pink Fairy Dust & Petals Canvas Animation
+  // --------------------------------------------------------------------------
   const canvas = document.getElementById('petals-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -17,10 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
       height = canvas.height = window.innerHeight;
     });
 
-    const PETAL_COUNT = 25;
-    const petals = [];
+    const PARTICLE_COUNT = 30;
+    const particles = [];
+    const colors = ['#ffd1dc', '#f8bbd0', '#f48fb1', '#fff0f5', '#fffdf0'];
 
-    class Petal {
+    class FairyParticle {
       constructor() {
         this.reset();
       }
@@ -28,17 +32,19 @@ document.addEventListener('DOMContentLoaded', () => {
       reset() {
         this.x = Math.random() * width;
         this.y = Math.random() * -height;
-        this.size = Math.random() * 8 + 6;
-        this.speedY = Math.random() * 1.2 + 0.6;
+        this.isSparkle = Math.random() > 0.45;
+        this.size = this.isSparkle ? Math.random() * 3 + 1.5 : Math.random() * 9 + 6;
+        this.speedY = Math.random() * 1.0 + 0.5;
         this.speedX = Math.random() * 0.8 - 0.4;
         this.rotation = Math.random() * 360;
         this.spin = (Math.random() - 0.5) * 2;
-        this.opacity = Math.random() * 0.5 + 0.4;
+        this.opacity = Math.random() * 0.6 + 0.35;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
       }
 
       update() {
         this.y += this.speedY;
-        this.x += Math.sin(this.y * 0.01) + this.speedX;
+        this.x += Math.sin(this.y * 0.015) * 1.2 + this.speedX;
         this.rotation += this.spin;
 
         if (this.y > height + 20) {
@@ -52,33 +58,49 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.rotate((this.rotation * Math.PI) / 180);
         ctx.globalAlpha = this.opacity;
 
-        ctx.beginPath();
-        ctx.fillStyle = '#FFF8DC';
-        ctx.ellipse(0, 0, this.size, this.size * 0.6, 0, 0, Math.PI * 2);
-        ctx.fill();
+        if (this.isSparkle) {
+          // Draw 4-point twinkle fairy star
+          ctx.fillStyle = '#ffffff';
+          ctx.beginPath();
+          ctx.arc(0, 0, this.size, 0, Math.PI * 2);
+          ctx.fill();
 
-        ctx.beginPath();
-        ctx.fillStyle = '#F4C430';
-        ctx.arc(0, 0, this.size * 0.25, 0, Math.PI * 2);
-        ctx.fill();
+          // Soft glowing halo
+          ctx.fillStyle = 'rgba(255, 230, 240, 0.4)';
+          ctx.beginPath();
+          ctx.arc(0, 0, this.size * 2.5, 0, Math.PI * 2);
+          ctx.fill();
+        } else {
+          // Soft Fairy Rose Petal
+          ctx.beginPath();
+          ctx.fillStyle = this.color;
+          ctx.ellipse(0, 0, this.size, this.size * 0.65, 0, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Soft highlight
+          ctx.beginPath();
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+          ctx.ellipse(0, 0, this.size * 0.5, this.size * 0.3, 0, 0, Math.PI * 2);
+          ctx.fill();
+        }
 
         ctx.restore();
       }
     }
 
-    for (let i = 0; i < PETAL_COUNT; i++) {
-      petals.push(new Petal());
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      particles.push(new FairyParticle());
     }
 
-    function animatePetals() {
+    function animateParticles() {
       ctx.clearRect(0, 0, width, height);
-      petals.forEach((petal) => {
-        petal.update();
-        petal.draw();
+      particles.forEach((p) => {
+        p.update();
+        p.draw();
       });
-      requestAnimationFrame(animatePetals);
+      requestAnimationFrame(animateParticles);
     }
-    animatePetals();
+    animateParticles();
   }
 
   // Audio & Modal

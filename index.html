@@ -16,7 +16,7 @@
 
   <!-- Background Music Audio & Floating Toggle Button -->
   <audio id="bg-music" loop preload="auto">
-    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=sweet-lullaby-113886.mp3" type="audio/mpeg">
+    <source src="assets/music/bg-music.mp3" type="audio/mpeg">
   </audio>
 
   <button id="music-toggle-btn" class="music-toggle-btn paused" aria-label="Toggle background music">
@@ -35,21 +35,19 @@
   <div id="welcome-modal" class="welcome-modal">
     <div class="welcome-card">
       <svg class="welcome-flower-icon" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="16" fill="#F4C430" />
-        <circle cx="50" cy="20" r="14" fill="#FFF8DC" />
-        <circle cx="50" cy="80" r="14" fill="#FFF8DC" />
-        <circle cx="20" cy="50" r="14" fill="#FFF8DC" />
-        <circle cx="80" cy="50" r="14" fill="#FFF8DC" />
-        <circle cx="29" cy="29" r="14" fill="#FFF8DC" />
-        <circle cx="71" cy="71" r="14" fill="#FFF8DC" />
-        <circle cx="29" cy="71" r="14" fill="#FFF8DC" />
-        <circle cx="71" cy="29" fill="#FFF8DC" r="14" />
+        <!-- Fairy Butterfly / Flower Wings SVG -->
+        <circle cx="50" cy="50" r="14" fill="#d85c7c" />
+        <ellipse cx="32" cy="38" rx="18" ry="12" fill="#f8bbd0" transform="rotate(-25 32 38)" opacity="0.9" />
+        <ellipse cx="68" cy="38" rx="18" ry="12" fill="#f8bbd0" transform="rotate(25 68 38)" opacity="0.9" />
+        <ellipse cx="34" cy="62" rx="14" ry="10" fill="#f48fb1" transform="rotate(25 34 62)" opacity="0.8" />
+        <ellipse cx="66" cy="62" rx="14" ry="10" fill="#f48fb1" transform="rotate(-25 66 62)" opacity="0.8" />
+        <circle cx="50" cy="50" r="8" fill="#ffd1dc" />
       </svg>
       <p class="welcome-subtitle">You are cordially invited to celebrate</p>
       <h1 class="welcome-title">Arshea's 1st Birthday<br>&amp; Christening</h1>
-      <p class="welcome-date-text">September 26, 2026 • 12:00 PM</p>
+      <p class="welcome-date-text">November 14, 2026 • 10:00 AM</p>
       <button id="btn-open-invitation" class="btn-open-invitation">
-        ✉️ Open Invitation
+        ✉️ Open Invitation 🧚✨
       </button>
     </div>
   </div>
@@ -117,20 +115,20 @@
 
       <div class="date-highlight-card">
         <span class="date-pill">Save The Date</span>
-        <div class="date-main">September 26, 2026</div>
-        <div class="date-sub">Saturday • 12:00 PM</div>
+        <div class="date-main">November 14, 2026</div>
+        <div class="date-sub">Saturday • 10:00 AM</div>
       </div>
 
       <div class="location-card">
         <div class="location-header">
           <div class="location-icon-box">⛪</div>
           <div>
-            <span class="location-badge">Christening Ceremony</span>
-            <h3 class="location-name">National Shrine of the Sacred Heart</h3>
-            <p class="location-address">San Antonio Village, Makati City, Metro Manila</p>
+            <span class="location-badge">Christening Ceremony • 10:00 AM</span>
+            <h3 class="location-name">Our Lady of the Airways Parish</h3>
+            <p class="location-address">Chapel Road, Pasay / Parañaque, Metro Manila</p>
           </div>
         </div>
-        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn-map">
+        <a href="https://www.google.com/maps/search/?api=1&query=Our+Lady+of+the+Airways+Parish+Pasay" target="_blank" rel="noopener noreferrer" class="btn-map">
           📍 View Church Map
         </a>
       </div>
@@ -139,12 +137,12 @@
         <div class="location-header">
           <div class="location-icon-box">🎂</div>
           <div>
-            <span class="location-badge">1st Birthday Party &amp; Lunch</span>
-            <h3 class="location-name">Shakey's Pasong Tamo</h3>
-            <p class="location-address">Chino Roces Ave, Makati City, Metro Manila</p>
+            <span class="location-badge">1st Birthday Party &amp; Lunch • 12:00 NN</span>
+            <h3 class="location-name">Jollibee Parañaque</h3>
+            <p class="location-address">Parañaque City, Metro Manila</p>
           </div>
         </div>
-        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn-map">
+        <a href="https://www.google.com/maps/search/?api=1&query=Jollibee+Paranaque" target="_blank" rel="noopener noreferrer" class="btn-map">
           📍 View Reception Map
         </a>
       </div>
@@ -158,35 +156,35 @@
       </div>
 
       <div class="dresscode-card">
-        <h3 class="dresscode-theme">Shades of Pastel Yellow &amp; Soft Blush</h3>
+        <h3 class="dresscode-theme">Shades of Blush Pink &amp; Fairy Pastels</h3>
         <p class="dresscode-desc">
-          We invite all our loved ones to celebrate in harmony! Please wear your favorite soft pastel yellow, cream, or soft blush pink outfits.
+          Our little fairy is turning One! We invite all our loved ones to celebrate in harmony. Please wear your favorite soft shades of blush pink, dusty rose, fairy mauve, pastel peach, or soft cream.
         </p>
 
         <div class="palette-grid">
-          <div class="swatch-item" data-name="Buttercup Yellow">
-            <div class="swatch-circle" style="background-color: var(--swatch-buttercup);"></div>
-            <span class="swatch-label">Buttercup</span>
+          <div class="swatch-item" data-name="Blush Pink">
+            <div class="swatch-circle" style="background-color: var(--swatch-blush);"></div>
+            <span class="swatch-label">Blush Pink</span>
+          </div>
+          <div class="swatch-item" data-name="Dusty Rose">
+            <div class="swatch-circle" style="background-color: var(--swatch-dusty-rose);"></div>
+            <span class="swatch-label">Dusty Rose</span>
+          </div>
+          <div class="swatch-item" data-name="Fairy Mauve">
+            <div class="swatch-circle" style="background-color: var(--swatch-mauve);"></div>
+            <span class="swatch-label">Mauve</span>
           </div>
           <div class="swatch-item" data-name="Soft Cream">
-            <div class="swatch-circle" style="background-color: var(--swatch-cream); border-color: #e2d2a4;"></div>
-            <span class="swatch-label">Cream</span>
+            <div class="swatch-circle" style="background-color: var(--swatch-cream); border-color: #f3d4dc;"></div>
+            <span class="swatch-label">Soft Cream</span>
           </div>
-          <div class="swatch-item" data-name="Primrose">
-            <div class="swatch-circle" style="background-color: var(--swatch-primrose);"></div>
-            <span class="swatch-label">Primrose</span>
+          <div class="swatch-item" data-name="Pastel Peach">
+            <div class="swatch-circle" style="background-color: var(--swatch-peach);"></div>
+            <span class="swatch-label">Peach</span>
           </div>
-          <div class="swatch-item" data-name="Daisy Honey">
-            <div class="swatch-circle" style="background-color: var(--swatch-honey);"></div>
-            <span class="swatch-label">Honey</span>
-          </div>
-          <div class="swatch-item" data-name="Sunlight">
-            <div class="swatch-circle" style="background-color: var(--swatch-sunlight);"></div>
-            <span class="swatch-label">Sunlight</span>
-          </div>
-          <div class="swatch-item" data-name="Warm Vanilla">
-            <div class="swatch-circle" style="background-color: #fdf5e6; border-color: #dfd5be;"></div>
-            <span class="swatch-label">Vanilla</span>
+          <div class="swatch-item" data-name="Baby Pink">
+            <div class="swatch-circle" style="background-color: var(--swatch-baby-pink);"></div>
+            <span class="swatch-label">Baby Pink</span>
           </div>
         </div>
       </div>
@@ -324,12 +322,12 @@
             <label class="form-label">Which event will you attend? *</label>
             <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 6px;">
               <label style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; cursor: pointer;">
-                <input type="checkbox" id="check-church" name="church" checked style="width: 18px; height: 18px; accent-color: var(--accent-gold);">
-                <span>⛪ Christening Ceremony (12:00 PM)</span>
+                <input type="checkbox" id="check-church" name="church" checked style="width: 18px; height: 18px; accent-color: var(--accent-rose);">
+                <span>⛪ Christening Ceremony (Our Lady of the Airways Parish • 10:00 AM)</span>
               </label>
               <label style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; cursor: pointer;">
-                <input type="checkbox" id="check-reception" name="reception" checked style="width: 18px; height: 18px; accent-color: var(--accent-gold);">
-                <span>🎂 1st Birthday Party &amp; Lunch (Shakey's Pasong Tamo)</span>
+                <input type="checkbox" id="check-reception" name="reception" checked style="width: 18px; height: 18px; accent-color: var(--accent-rose);">
+                <span>🎂 1st Birthday Party &amp; Lunch (Jollibee Parañaque • 12:00 NN)</span>
               </label>
             </div>
           </div>
