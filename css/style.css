@@ -229,84 +229,120 @@ body {
 
 .hero-section {
   text-align: center;
-  margin-bottom: 40px;
-  padding-top: 20px;
+  margin-bottom: 35px;
+  padding-top: 10px;
 }
 
-.hero-banner-container {
+.hero-card {
   position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  background: #ffffff;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 246, 249, 0.96) 100%);
   border: 1px solid var(--card-border);
-  margin-bottom: 30px;
+  border-radius: var(--radius-lg);
+  padding: 36px 22px 28px;
+  box-shadow: 0 16px 45px rgba(216, 92, 124, 0.12), 0 2px 10px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
 }
 
-.hero-banner-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-}
-
-.hero-banner-overlay {
-  padding: 24px 20px;
-  background: rgba(255, 255, 255, 0.95);
-  margin-top: -50px;
-  position: relative;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-}
-
-.hero-tag {
-  font-family: var(--font-script);
-  font-size: 2.2rem;
-  color: var(--accent-gold);
-  margin-bottom: -6px;
+.hero-fairy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(255, 235, 242, 0.95), rgba(255, 218, 230, 0.95));
+  border: 1px solid rgba(216, 92, 124, 0.3);
+  color: var(--accent-rose);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 6px 18px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(216, 92, 124, 0.12);
 }
 
 .hero-main-title {
   font-family: var(--font-serif);
-  font-size: 2.6rem;
+  font-size: clamp(2rem, 5.5vw, 2.9rem);
   font-weight: 700;
   color: var(--text-dark);
-  line-height: 1.15;
+  line-height: 1.16;
+  margin-bottom: 6px;
+}
+
+.hero-title-sub {
+  display: block;
+  font-size: clamp(1.35rem, 3.8vw, 1.95rem);
+  color: var(--accent-rose);
+  font-weight: 600;
+  margin-top: 6px;
 }
 
 .hero-sub-script {
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 2.4vw, 0.98rem);
   color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-top: 6px;
-  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 8px auto 26px;
+  max-width: 520px;
+  line-height: 1.5;
 }
 
-.hero-photo-wrapper {
+/* Regal Fairy Arch Portrait Frame showcasing Photo 1 */
+.hero-portrait-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto 28px;
+}
+
+.hero-portrait-frame {
   position: relative;
-  width: 220px;
-  height: 220px;
-  margin: 0 auto 30px;
+  width: clamp(240px, 78vw, 340px);
+  aspect-ratio: 3 / 4;
+  border-radius: 170px 170px 24px 24px;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 6px 6px 0;
+  border: 4px solid #ffffff;
+  box-shadow: 0 16px 40px rgba(216, 92, 124, 0.22), 0 0 0 2px rgba(244, 143, 177, 0.5);
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.hero-portrait-frame:hover {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 22px 50px rgba(216, 92, 124, 0.32), 0 0 0 3px rgba(216, 92, 124, 0.7);
 }
 
 .hero-photo-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
-  border-radius: 50%;
-  border: 6px solid #ffffff;
-  box-shadow: 0 12px 30px rgba(216, 92, 124, 0.25);
-  will-change: transform;
+  object-position: center 12%;
+  border-radius: 164px 164px 18px 18px;
+  display: block;
+  image-rendering: auto;
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-.hero-photo-ring {
+.hero-portrait-tag {
   position: absolute;
-  inset: -12px;
-  border: 2px dashed var(--accent-gold);
-  border-radius: 50%;
-  animation: spinSlow 30s linear infinite;
-  pointer-events: none;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(216, 92, 124, 0.25);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--accent-rose);
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
 }
 
 /* Countdown */
@@ -587,50 +623,85 @@ section {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 22px;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 500px) {
   .gallery-grid {
     grid-template-columns: 1fr;
+    max-width: 330px;
   }
 }
 
 .polaroid-card {
   background: #ffffff;
-  padding: 12px 12px 20px;
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  border: 1px solid rgba(0,0,0,0.04);
-  transform: rotate(-1.5deg);
-  transition: all 0.3s ease;
+  padding: 12px 12px 18px;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(216, 92, 124, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(216, 92, 124, 0.18);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
-}
-
-.polaroid-card:nth-child(even) {
-  transform: rotate(1.5deg);
+  position: relative;
+  text-align: center;
 }
 
 .polaroid-card:hover {
-  transform: rotate(0deg) translateY(-6px);
-  box-shadow: 0 15px 35px rgba(184, 150, 80, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(216, 92, 124, 0.22);
+}
+
+.polaroid-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fbf5f7;
 }
 
 .polaroid-img {
   width: 100%;
-  height: 260px;
+  height: 100%;
   object-fit: cover;
-  object-position: top center;
-  border-radius: 4px;
-  will-change: transform;
+  object-position: center 15%;
+  border-radius: 12px;
+  display: block;
+  transition: transform 0.45s ease;
+  image-rendering: auto;
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.polaroid-card:hover .polaroid-img {
+  transform: scale(1.035);
+}
+
+.hd-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(20, 15, 20, 0.65);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  pointer-events: none;
 }
 
 .polaroid-caption {
-  font-family: var(--font-script);
-  font-size: 1.6rem;
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  font-weight: 600;
   color: var(--text-dark);
   text-align: center;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .godparents-container {
@@ -920,227 +991,384 @@ section {
 }
 
 /* ==========================================================================
-   HD IMAGE QUALITY & ADAPTIVE RESPONSIVE RULES
+   HD IMAGE QUALITY & LIGHTBOX MODAL
    ========================================================================== */
 
-/* HD Image Rendering - crisp, sharp, no blur */
+/* HD Image Rendering - crisp, sharp, natural quality without blur */
 img {
   max-width: 100%;
   height: auto;
   image-rendering: auto;
+  image-rendering: -webkit-optimize-contrast;
   -ms-interpolation-mode: bicubic;
 }
 
 .hero-photo-img,
-.hero-banner-img,
-.polaroid-img {
+.polaroid-img,
+.lightbox-full-img {
   image-rendering: auto;
+  image-rendering: -webkit-optimize-contrast;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform: translateZ(0);
-  -webkit-font-smoothing: antialiased;
 }
+
+/* Lightbox Modal for HD viewing */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 12, 18, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.lightbox-dialog {
+  position: relative;
+  z-index: 2;
+  max-width: 92vw;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(0.92);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox-modal.active .lightbox-dialog {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -46px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.45);
+  transform: rotate(90deg);
+}
+
+.lightbox-img-frame {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+  border: 3px solid rgba(255, 255, 255, 0.25);
+  background: #110b10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-full-img {
+  max-width: 90vw;
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-caption-bar {
+  margin-top: 14px;
+  color: #ffffff;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   ADAPTIVE RESPONSIVE RULES (ALL SCREEN SIZES)
+   ========================================================================== */
 
 /* --------------------------------------------------------------------------
    LARGE DESKTOP (1200px+)
    -------------------------------------------------------------------------- */
 @media (min-width: 1200px) {
   .page-wrapper {
-    max-width: 800px;
+    max-width: 780px;
   }
 
-  .hero-photo-wrapper {
-    width: 280px;
-    height: 280px;
+  .hero-card {
+    padding: 44px 36px 36px;
   }
 
-  .hero-main-title {
-    font-size: 3rem;
-  }
-
-  .hero-banner-img {
-    height: 280px;
-  }
-
-  .polaroid-img {
-    height: 320px;
+  .hero-portrait-frame {
+    width: 350px;
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 680px;
   }
 }
 
 /* --------------------------------------------------------------------------
-   TABLET LANDSCAPE (768px – 1199px)
+   TABLET (768px – 1199px)
    -------------------------------------------------------------------------- */
 @media (min-width: 768px) and (max-width: 1199px) {
   .page-wrapper {
-    max-width: 720px;
-    padding: 20px 24px 120px;
+    max-width: 700px;
+    padding: 24px 20px 120px;
   }
 
-  .hero-photo-wrapper {
-    width: 240px;
-    height: 240px;
-  }
-
-  .hero-banner-img {
-    height: 240px;
+  .hero-portrait-frame {
+    width: 320px;
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-
-  .polaroid-img {
-    height: 280px;
+    gap: 22px;
   }
 }
 
 /* --------------------------------------------------------------------------
-   TABLET PORTRAIT / LARGE PHONE (600px – 767px)
+   LARGE MOBILE / PHABLET (500px – 767px)
    -------------------------------------------------------------------------- */
-@media (min-width: 600px) and (max-width: 767px) {
+@media (min-width: 500px) and (max-width: 767px) {
   .page-wrapper {
-    max-width: 600px;
-    padding: 16px 20px 120px;
+    padding: 16px 18px 110px;
   }
 
-  .hero-photo-wrapper {
-    width: 220px;
-    height: 220px;
+  .hero-card {
+    padding: 30px 18px 24px;
   }
 
-  .hero-main-title {
-    font-size: 2.4rem;
-  }
-
-  .hero-banner-img {
-    height: 220px;
+  .hero-portrait-frame {
+    width: 290px;
   }
 
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
-
-  .polaroid-img {
-    height: 260px;
-  }
-
-  .countdown-grid {
-    gap: 8px;
-  }
 }
 
 /* --------------------------------------------------------------------------
-   STANDARD PHONE (420px – 599px)
+   STANDARD MOBILE (375px – 499px)
    -------------------------------------------------------------------------- */
-@media (min-width: 420px) and (max-width: 599px) {
+@media (max-width: 499px) {
   .page-wrapper {
-    padding: 12px 14px 110px;
+    padding: 12px 14px 105px;
   }
 
-  .hero-photo-wrapper {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 24px;
+  .hero-card {
+    padding: 26px 14px 20px;
+    border-radius: 24px;
   }
 
-  .hero-photo-ring {
-    inset: -10px;
+  .hero-fairy-badge {
+    font-size: 0.75rem;
+    padding: 5px 14px;
+    letter-spacing: 1.5px;
   }
 
-  .hero-main-title {
-    font-size: 2.1rem;
+  .hero-portrait-frame {
+    width: min(290px, 84vw);
+    border-radius: 140px 140px 20px 20px;
+    border-width: 3px;
   }
 
-  .hero-tag {
-    font-size: 1.8rem;
+  .hero-photo-img {
+    border-radius: 136px 136px 16px 16px;
   }
 
-  .hero-sub-script {
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-  }
-
-  .hero-banner-img {
-    height: 180px;
-  }
-
-  .hero-banner-overlay {
-    padding: 20px 16px;
-    margin-top: -40px;
+  .hero-portrait-tag {
+    font-size: 0.72rem;
+    padding: 5px 14px;
+    bottom: 10px;
   }
 
   .section-title {
-    font-size: 1.9rem;
+    font-size: 1.85rem;
   }
 
   .date-main {
-    font-size: 2rem;
+    font-size: 1.85rem;
+  }
+
+  .countdown-container {
+    padding: 16px 12px;
   }
 
   .countdown-val {
     font-size: 1.5rem;
   }
 
+  .countdown-lbl {
+    font-size: 0.68rem;
+  }
+
   .countdown-grid {
     gap: 6px;
   }
 
-  .countdown-card {
-    padding: 10px 6px;
-  }
-
   .gallery-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .polaroid-img {
-    height: 280px;
+    max-width: 320px;
+    gap: 20px;
   }
 
   .palette-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 10px;
   }
 
   .dresscode-card {
-    padding: 20px 16px;
+    padding: 20px 14px;
   }
 
   .location-card {
-    padding: 20px 16px;
-  }
-
-  .welcome-title {
-    font-size: 2rem;
+    padding: 18px 14px;
   }
 
   .welcome-card {
-    padding: 30px 20px;
+    padding: 30px 18px;
+    border-radius: 24px;
   }
 
   .btn-open-invitation {
-    padding: 14px 28px;
+    padding: 14px 26px;
     font-size: 0.95rem;
   }
 
   .rsvp-card {
-    padding: 24px 16px;
-  }
-
-  .monetary-card {
-    padding: 20px 16px;
+    padding: 22px 14px;
   }
 
   .qr-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .qr-img-placeholder {
+    width: 115px;
+    height: 115px;
+  }
+
+  .floating-rsvp-bar {
+    bottom: 12px;
+    padding: 8px 16px;
     gap: 12px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SMALL MOBILE (320px – 374px, e.g. iPhone SE / Fold outer screen)
+   -------------------------------------------------------------------------- */
+@media (max-width: 374px) {
+  .page-wrapper {
+    padding: 10px 10px 95px;
+  }
+
+  .hero-card {
+    padding: 22px 10px 18px;
+    border-radius: 20px;
+  }
+
+  .hero-portrait-frame {
+    width: min(250px, 86vw);
+    border-radius: 120px 120px 18px 18px;
+  }
+
+  .hero-photo-img {
+    border-radius: 116px 116px 14px 14px;
+  }
+
+  .hero-portrait-tag {
+    font-size: 0.68rem;
+    padding: 4px 10px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .date-main {
+    font-size: 1.65rem;
+  }
+
+  .countdown-val {
+    font-size: 1.25rem;
+  }
+
+  .countdown-lbl {
+    font-size: 0.62rem;
+  }
+
+  .countdown-card {
+    padding: 8px 3px;
+  }
+
+  .countdown-grid {
+    gap: 4px;
+  }
+
+  .gallery-grid {
+    max-width: 280px;
+  }
+
+  .palette-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .swatch-circle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .location-card {
+    padding: 16px 10px;
+  }
+
+  .location-name {
+    font-size: 1.15rem;
+  }
+
+  .location-icon-box {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+
+  .qr-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .qr-img-placeholder {
@@ -1149,334 +1377,65 @@ img {
   }
 
   .floating-rsvp-bar {
-    bottom: 14px;
-    padding: 8px 16px;
-    gap: 12px;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   SMALL PHONE (320px – 419px)
-   -------------------------------------------------------------------------- */
-@media (max-width: 419px) {
-  .page-wrapper {
-    padding: 10px 12px 100px;
-  }
-
-  .hero-photo-wrapper {
-    width: 170px;
-    height: 170px;
-    margin-bottom: 20px;
-  }
-
-  .hero-photo-img {
-    border-width: 4px;
-  }
-
-  .hero-photo-ring {
-    inset: -8px;
-    border-width: 1.5px;
-  }
-
-  .hero-main-title {
-    font-size: 1.7rem;
-  }
-
-  .hero-tag {
-    font-size: 1.5rem;
-  }
-
-  .hero-sub-script {
-    font-size: 0.78rem;
-    letter-spacing: 0.5px;
-  }
-
-  .hero-banner-img {
-    height: 150px;
-  }
-
-  .hero-banner-overlay {
-    padding: 16px 12px;
-    margin-top: -30px;
-  }
-
-  .section-title {
-    font-size: 1.65rem;
-  }
-
-  .section-subtitle {
-    font-size: 0.85rem;
-  }
-
-  .date-highlight-card {
-    padding: 18px 14px;
-  }
-
-  .date-main {
-    font-size: 1.7rem;
-  }
-
-  .date-sub {
-    font-size: 0.92rem;
-  }
-
-  .countdown-container {
-    padding: 16px 12px;
-  }
-
-  .countdown-val {
-    font-size: 1.3rem;
-  }
-
-  .countdown-lbl {
-    font-size: 0.65rem;
-  }
-
-  .countdown-grid {
-    gap: 5px;
-  }
-
-  .countdown-card {
-    padding: 8px 4px;
-  }
-
-  .gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .polaroid-img {
-    height: 240px;
-  }
-
-  .polaroid-caption {
-    font-size: 1.3rem;
-  }
-
-  .polaroid-card {
-    padding: 8px 8px 16px;
-  }
-
-  .palette-grid {
-    grid-template-columns: repeat(3, 1fr);
+    bottom: 8px;
+    padding: 6px 12px;
     gap: 8px;
   }
 
-  .swatch-circle {
-    width: 40px;
-    height: 40px;
-  }
-
-  .swatch-label {
-    font-size: 0.62rem;
-  }
-
-  .dresscode-card {
-    padding: 18px 14px;
-  }
-
-  .dresscode-theme {
-    font-size: 1.25rem;
-  }
-
-  .dresscode-desc {
-    font-size: 0.82rem;
-  }
-
-  .location-card {
-    padding: 18px 14px;
-  }
-
-  .location-name {
-    font-size: 1.2rem;
-  }
-
-  .location-badge {
-    font-size: 0.68rem;
-  }
-
-  .location-address {
-    font-size: 0.82rem;
-  }
-
-  .location-icon-box {
-    width: 42px;
-    height: 42px;
-    font-size: 1.2rem;
-  }
-
-  .btn-map {
-    font-size: 0.82rem;
-    padding: 8px 16px;
-  }
-
-  .welcome-card {
-    padding: 28px 18px;
-    border-radius: 24px;
-  }
-
-  .welcome-title {
-    font-size: 1.75rem;
-  }
-
-  .welcome-subtitle {
-    font-size: 0.72rem;
-    letter-spacing: 1.5px;
-  }
-
-  .welcome-date-text {
-    font-size: 0.9rem;
-  }
-
-  .welcome-flower-icon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .btn-open-invitation {
-    padding: 13px 24px;
-    font-size: 0.9rem;
-    border-radius: 40px;
-  }
-
-  .rsvp-card {
-    padding: 20px 14px;
-  }
-
-  .form-input, .form-textarea {
-    padding: 12px 14px;
-    font-size: 0.9rem;
-  }
-
-  .btn-submit-rsvp {
-    padding: 14px;
-    font-size: 0.95rem;
-  }
-
-  .monetary-card {
-    padding: 18px 14px;
-  }
-
-  .monetary-title {
-    font-size: 1.3rem;
-  }
-
-  .monetary-desc {
-    font-size: 0.82rem;
-  }
-
-  .qr-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .qr-img-placeholder {
-    width: 130px;
-    height: 130px;
-  }
-
-  .floating-rsvp-bar {
-    bottom: 10px;
-    padding: 8px 14px;
-    gap: 10px;
-    border-radius: 40px;
-  }
-
   .floating-rsvp-bar span {
-    font-size: 0.78rem !important;
+    font-size: 0.74rem !important;
   }
 
   .floating-rsvp-btn {
-    padding: 6px 14px;
-    font-size: 0.8rem;
-  }
-
-  .music-toggle-btn {
-    top: 14px;
-    right: 14px;
     padding: 6px 12px;
     font-size: 0.78rem;
   }
-}
 
-/* --------------------------------------------------------------------------
-   EXTRA SMALL PHONE (below 320px — iPhone SE / older devices)
-   -------------------------------------------------------------------------- */
-@media (max-width: 319px) {
-  .page-wrapper {
-    padding: 8px 8px 90px;
-  }
-
-  .hero-photo-wrapper {
-    width: 140px;
-    height: 140px;
-  }
-
-  .hero-main-title {
-    font-size: 1.5rem;
-  }
-
-  .hero-tag {
-    font-size: 1.3rem;
-  }
-
-  .hero-banner-img {
-    height: 120px;
-  }
-
-  .welcome-title {
-    font-size: 1.5rem;
-  }
-
-  .section-title {
-    font-size: 1.4rem;
-  }
-
-  .date-main {
-    font-size: 1.5rem;
-  }
-
-  .countdown-val {
-    font-size: 1.1rem;
+  .music-toggle-btn {
+    top: 12px;
+    right: 12px;
+    padding: 6px 10px;
+    font-size: 0.75rem;
   }
 }
 
 /* --------------------------------------------------------------------------
-   LANDSCAPE ORIENTATION (Mobile)
+   LANDSCAPE MOBILE
    -------------------------------------------------------------------------- */
-@media (max-height: 500px) and (orientation: landscape) {
+@media (max-height: 520px) and (orientation: landscape) {
   .welcome-modal {
     padding: 10px;
   }
 
   .welcome-card {
-    padding: 20px 24px;
-    max-width: 500px;
+    padding: 18px 24px;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
   }
 
   .welcome-flower-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 8px;
   }
 
   .welcome-title {
-    font-size: 1.6rem;
+    font-size: 1.55rem;
     margin-bottom: 4px;
   }
 
   .welcome-date-text {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .btn-open-invitation {
-    padding: 10px 24px;
-    font-size: 0.9rem;
+    padding: 10px 22px;
+    font-size: 0.88rem;
   }
 
-  .hero-photo-wrapper {
-    width: 160px;
-    height: 160px;
+  .hero-portrait-frame {
+    width: 220px;
   }
 }
 
@@ -1487,7 +1446,8 @@ img {
   .music-toggle-btn,
   .floating-rsvp-bar,
   #petals-canvas,
-  .welcome-modal {
+  .welcome-modal,
+  .lightbox-modal {
     display: none !important;
   }
 

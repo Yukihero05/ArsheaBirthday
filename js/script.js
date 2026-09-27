@@ -257,4 +257,60 @@ document.addEventListener('DOMContentLoaded', () => {
       alert(`🌸 Theme Color: ${name}\nDress Code: Any pastel color is welcome! Ninongs & Ninangs, please wear WHITE.`);
     });
   });
+
+  // --------------------------------------------------------------------------
+  // HD Photo Lightbox Modal
+  // --------------------------------------------------------------------------
+  const lightboxModal = document.getElementById('lightbox-modal');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxBackdrop = document.getElementById('lightbox-backdrop');
+
+  function openLightbox(src, caption) {
+    if (!lightboxModal || !lightboxImg) return;
+    lightboxImg.src = src;
+    if (lightboxCaption) lightboxCaption.textContent = caption || 'Baby Arshea • Special Moments';
+    lightboxModal.classList.add('active');
+    lightboxModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (!lightboxModal) return;
+    lightboxModal.classList.remove('active');
+    lightboxModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+
+  // Hero portrait click
+  const heroCard = document.getElementById('hero-portrait-card');
+  if (heroCard) {
+    heroCard.addEventListener('click', () => {
+      const img = heroCard.querySelector('img');
+      const src = img ? (img.getAttribute('data-hd-src') || img.src) : 'assets/images/hero.jpg';
+      const caption = img ? (img.getAttribute('data-hd-caption') || 'Baby Arshea • Our Little Fairy Princess') : 'Baby Arshea';
+      openLightbox(src, caption);
+    });
+  }
+
+  // Gallery cards click
+  const polaroids = document.querySelectorAll('.polaroid-card');
+  polaroids.forEach(card => {
+    card.addEventListener('click', () => {
+      const src = card.getAttribute('data-hd-src') || (card.querySelector('img') ? card.querySelector('img').src : '');
+      const caption = card.getAttribute('data-hd-caption') || (card.querySelector('.polaroid-caption') ? card.querySelector('.polaroid-caption').innerText : '');
+      if (src) openLightbox(src, caption);
+    });
+  });
 });
+

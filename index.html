@@ -62,46 +62,57 @@
 
     <!-- HERO SECTION -->
     <section id="hero-section" class="hero-section">
-      <div class="hero-banner-container">
-        <img src="assets/images/banner.jpg" alt="Floral Banner" class="hero-banner-img">
-        <div class="hero-banner-overlay">
-          <p class="hero-tag">You're invited to celebrate</p>
-          <h1 class="hero-main-title">Baby Arshea's<br>1st Birthday &amp; Christening</h1>
-          <p class="hero-sub-script">A celebration of 1 year of love, joy &amp; blessings</p>
+      <div class="hero-card">
+        <div class="hero-fairy-badge">
+          <span class="fairy-sparkle">✨</span>
+          <span>You're Cordially Invited</span>
+          <span class="fairy-sparkle">✨</span>
         </div>
-      </div>
 
-      <div class="hero-photo-wrapper">
-        <img src="assets/images/hero.jpg" alt="Baby Arshea" class="hero-photo-img">
-        <div class="hero-photo-ring"></div>
-      </div>
+        <h1 class="hero-main-title">
+          Baby Arshea's
+          <span class="hero-title-sub">1st Birthday &amp; Christening</span>
+        </h1>
+        <p class="hero-sub-script">A celebration of 1 year of love, joy &amp; holy blessings 🌸</p>
 
-      <!-- Live Countdown Timer -->
-      <div class="countdown-container">
-        <div class="countdown-header">Countdown to Special Day</div>
-        <div class="countdown-grid">
-          <div class="countdown-card">
-            <div class="countdown-val" id="cd-days">00</div>
-            <div class="countdown-lbl">Days</div>
+        <!-- Regal Fairy Portrait Frame showcasing Photo 1 (Baby Arshea's Smiling Photo) -->
+        <div class="hero-portrait-container">
+          <div class="hero-portrait-frame" id="hero-portrait-card">
+            <img src="assets/images/hero.jpg" alt="Baby Arshea - 1st Birthday & Christening" class="hero-photo-img" id="hero-photo" data-hd-src="assets/images/hero.jpg" data-hd-caption="Baby Arshea • Our Little Fairy Princess">
+            <div class="hero-portrait-glow"></div>
+            <div class="hero-portrait-tag">
+              <span>🌸 Our Little Fairy Princess 🌸</span>
+            </div>
           </div>
-          <div class="countdown-card">
-            <div class="countdown-val" id="cd-hours">00</div>
-            <div class="countdown-lbl">Hours</div>
-          </div>
-          <div class="countdown-card">
-            <div class="countdown-val" id="cd-minutes">00</div>
-            <div class="countdown-lbl">Mins</div>
-          </div>
-          <div class="countdown-card">
-            <div class="countdown-val" id="cd-seconds">00</div>
-            <div class="countdown-lbl">Secs</div>
+        </div>
+
+        <!-- Live Countdown Timer -->
+        <div class="countdown-container">
+          <div class="countdown-header">Countdown to Special Day ⏳</div>
+          <div class="countdown-grid">
+            <div class="countdown-card">
+              <div class="countdown-val" id="cd-days">00</div>
+              <div class="countdown-lbl">Days</div>
+            </div>
+            <div class="countdown-card">
+              <div class="countdown-val" id="cd-hours">00</div>
+              <div class="countdown-lbl">Hours</div>
+            </div>
+            <div class="countdown-card">
+              <div class="countdown-val" id="cd-minutes">00</div>
+              <div class="countdown-lbl">Mins</div>
+            </div>
+            <div class="countdown-card">
+              <div class="countdown-val" id="cd-seconds">00</div>
+              <div class="countdown-lbl">Secs</div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="floral-divider">
         <span class="divider-line"></span>
-        <span class="divider-icon">🌼</span>
+        <span class="divider-icon">🌸</span>
         <span class="divider-line"></span>
       </div>
     </section>
@@ -208,17 +219,23 @@
       <div class="section-header">
         <span class="section-tagline">Sweet Milestones</span>
         <h2 class="section-title">Photo Gallery</h2>
-        <p class="section-subtitle">Precious moments of Baby Arshea turning One &amp; receiving her holy blessings</p>
+        <p class="section-subtitle">Precious moments of Baby Arshea • Tap any photo to view in crystal HD ✨</p>
       </div>
 
-      <div class="gallery-grid" style="grid-template-columns: repeat(2, 1fr);">
-        <div class="polaroid-card">
-          <img src="assets/images/gallery1.jpg" alt="Baby Arshea - Our Little Fairy" class="polaroid-img">
-          <div class="polaroid-caption">Our Little Fairy</div>
+      <div class="gallery-grid">
+        <div class="polaroid-card" data-hd-src="assets/images/gallery1.jpg" data-hd-caption="Baby Arshea • Our Little Fairy 🧚">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/gallery1.jpg" alt="Baby Arshea - Our Little Fairy" class="polaroid-img">
+            <span class="hd-tag">HD View 🔍</span>
+          </div>
+          <div class="polaroid-caption">Our Little Fairy ✨</div>
         </div>
-        <div class="polaroid-card">
-          <img src="assets/images/gallery2.jpg" alt="Baby Arshea - Pure Joy and Blessings" class="polaroid-img">
-          <div class="polaroid-caption">Pure Joy &amp; Blessings</div>
+        <div class="polaroid-card" data-hd-src="assets/images/gallery2.jpg" data-hd-caption="Baby Arshea • Pure Joy &amp; Blessings 🌸">
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/gallery2.jpg" alt="Baby Arshea - Pure Joy and Blessings" class="polaroid-img">
+            <span class="hd-tag">HD View 🔍</span>
+          </div>
+          <div class="polaroid-caption">Pure Joy &amp; Blessings 🌸</div>
         </div>
       </div>
     </section>
@@ -310,6 +327,18 @@
     </section>
 
   </main>
+
+  <!-- HD Photo Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="HD Photo View">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-dialog">
+      <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close HD photo preview">&times;</button>
+      <div class="lightbox-img-frame">
+        <img id="lightbox-img" src="" alt="Baby Arshea HD View" class="lightbox-full-img">
+      </div>
+      <div class="lightbox-caption-bar" id="lightbox-caption"></div>
+    </div>
+  </div>
 
   <script src="js/script.js"></script>
 </body>
