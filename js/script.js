@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
   swatches.forEach(swatch => {
     swatch.addEventListener('click', () => {
       const name = swatch.getAttribute('data-name');
-      alert(`🌼 Theme Color: ${name}\nDress Code Guidance: We recommend soft pastel yellow shades for a lovely matching photo memory!`);
+      alert(`🌸 Theme Color: ${name}\nDress Code: Any pastel color is welcome! Ninongs & Ninangs, please wear WHITE.`);
     });
   });
 });
