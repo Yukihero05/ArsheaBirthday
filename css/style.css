@@ -286,6 +286,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   border-radius: 50%;
   border: 6px solid #ffffff;
   box-shadow: 0 12px 30px rgba(184, 150, 80, 0.25);
@@ -609,8 +610,9 @@ section {
 
 .polaroid-img {
   width: 100%;
-  height: 200px;
+  height: 260px;
   object-fit: cover;
+  object-position: top center;
   border-radius: 4px;
 }
 
