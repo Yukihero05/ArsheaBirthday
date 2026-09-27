@@ -296,7 +296,8 @@ body {
   object-position: top center;
   border-radius: 50%;
   border: 6px solid #ffffff;
-  box-shadow: 0 12px 30px rgba(184, 150, 80, 0.25);
+  box-shadow: 0 12px 30px rgba(216, 92, 124, 0.25);
+  will-change: transform;
 }
 
 .hero-photo-ring {
@@ -621,6 +622,7 @@ section {
   object-fit: cover;
   object-position: top center;
   border-radius: 4px;
+  will-change: transform;
 }
 
 .polaroid-caption {
@@ -916,3 +918,590 @@ section {
   font-size: 0.85rem;
   font-weight: 600;
 }
+
+/* ==========================================================================
+   HD IMAGE QUALITY & ADAPTIVE RESPONSIVE RULES
+   ========================================================================== */
+
+/* HD Image Rendering */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: bicubic;
+}
+
+.hero-photo-img,
+.hero-banner-img,
+.polaroid-img {
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Make all images responsive by default */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --------------------------------------------------------------------------
+   LARGE DESKTOP (1200px+)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1200px) {
+  .page-wrapper {
+    max-width: 800px;
+  }
+
+  .hero-photo-wrapper {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero-main-title {
+    font-size: 3rem;
+  }
+
+  .hero-banner-img {
+    height: 280px;
+  }
+
+  .polaroid-img {
+    height: 320px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TABLET LANDSCAPE (768px – 1199px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .page-wrapper {
+    max-width: 720px;
+    padding: 20px 24px 120px;
+  }
+
+  .hero-photo-wrapper {
+    width: 240px;
+    height: 240px;
+  }
+
+  .hero-banner-img {
+    height: 240px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .polaroid-img {
+    height: 280px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TABLET PORTRAIT / LARGE PHONE (600px – 767px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 600px) and (max-width: 767px) {
+  .page-wrapper {
+    max-width: 600px;
+    padding: 16px 20px 120px;
+  }
+
+  .hero-photo-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero-main-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-banner-img {
+    height: 220px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .polaroid-img {
+    height: 260px;
+  }
+
+  .countdown-grid {
+    gap: 8px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   STANDARD PHONE (420px – 599px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 420px) and (max-width: 599px) {
+  .page-wrapper {
+    padding: 12px 14px 110px;
+  }
+
+  .hero-photo-wrapper {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 24px;
+  }
+
+  .hero-photo-ring {
+    inset: -10px;
+  }
+
+  .hero-main-title {
+    font-size: 2.1rem;
+  }
+
+  .hero-tag {
+    font-size: 1.8rem;
+  }
+
+  .hero-sub-script {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-banner-img {
+    height: 180px;
+  }
+
+  .hero-banner-overlay {
+    padding: 20px 16px;
+    margin-top: -40px;
+  }
+
+  .section-title {
+    font-size: 1.9rem;
+  }
+
+  .date-main {
+    font-size: 2rem;
+  }
+
+  .countdown-val {
+    font-size: 1.5rem;
+  }
+
+  .countdown-grid {
+    gap: 6px;
+  }
+
+  .countdown-card {
+    padding: 10px 6px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .polaroid-img {
+    height: 280px;
+  }
+
+  .palette-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .dresscode-card {
+    padding: 20px 16px;
+  }
+
+  .location-card {
+    padding: 20px 16px;
+  }
+
+  .welcome-title {
+    font-size: 2rem;
+  }
+
+  .welcome-card {
+    padding: 30px 20px;
+  }
+
+  .btn-open-invitation {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+  }
+
+  .rsvp-card {
+    padding: 24px 16px;
+  }
+
+  .monetary-card {
+    padding: 20px 16px;
+  }
+
+  .qr-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .qr-img-placeholder {
+    width: 120px;
+    height: 120px;
+  }
+
+  .floating-rsvp-bar {
+    bottom: 14px;
+    padding: 8px 16px;
+    gap: 12px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SMALL PHONE (320px – 419px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 419px) {
+  .page-wrapper {
+    padding: 10px 12px 100px;
+  }
+
+  .hero-photo-wrapper {
+    width: 170px;
+    height: 170px;
+    margin-bottom: 20px;
+  }
+
+  .hero-photo-img {
+    border-width: 4px;
+  }
+
+  .hero-photo-ring {
+    inset: -8px;
+    border-width: 1.5px;
+  }
+
+  .hero-main-title {
+    font-size: 1.7rem;
+  }
+
+  .hero-tag {
+    font-size: 1.5rem;
+  }
+
+  .hero-sub-script {
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-banner-img {
+    height: 150px;
+  }
+
+  .hero-banner-overlay {
+    padding: 16px 12px;
+    margin-top: -30px;
+  }
+
+  .section-title {
+    font-size: 1.65rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .date-highlight-card {
+    padding: 18px 14px;
+  }
+
+  .date-main {
+    font-size: 1.7rem;
+  }
+
+  .date-sub {
+    font-size: 0.92rem;
+  }
+
+  .countdown-container {
+    padding: 16px 12px;
+  }
+
+  .countdown-val {
+    font-size: 1.3rem;
+  }
+
+  .countdown-lbl {
+    font-size: 0.65rem;
+  }
+
+  .countdown-grid {
+    gap: 5px;
+  }
+
+  .countdown-card {
+    padding: 8px 4px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .polaroid-img {
+    height: 240px;
+  }
+
+  .polaroid-caption {
+    font-size: 1.3rem;
+  }
+
+  .polaroid-card {
+    padding: 8px 8px 16px;
+  }
+
+  .palette-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .swatch-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .swatch-label {
+    font-size: 0.62rem;
+  }
+
+  .dresscode-card {
+    padding: 18px 14px;
+  }
+
+  .dresscode-theme {
+    font-size: 1.25rem;
+  }
+
+  .dresscode-desc {
+    font-size: 0.82rem;
+  }
+
+  .location-card {
+    padding: 18px 14px;
+  }
+
+  .location-name {
+    font-size: 1.2rem;
+  }
+
+  .location-badge {
+    font-size: 0.68rem;
+  }
+
+  .location-address {
+    font-size: 0.82rem;
+  }
+
+  .location-icon-box {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+  }
+
+  .btn-map {
+    font-size: 0.82rem;
+    padding: 8px 16px;
+  }
+
+  .welcome-card {
+    padding: 28px 18px;
+    border-radius: 24px;
+  }
+
+  .welcome-title {
+    font-size: 1.75rem;
+  }
+
+  .welcome-subtitle {
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+  }
+
+  .welcome-date-text {
+    font-size: 0.9rem;
+  }
+
+  .welcome-flower-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .btn-open-invitation {
+    padding: 13px 24px;
+    font-size: 0.9rem;
+    border-radius: 40px;
+  }
+
+  .rsvp-card {
+    padding: 20px 14px;
+  }
+
+  .form-input, .form-textarea {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+
+  .btn-submit-rsvp {
+    padding: 14px;
+    font-size: 0.95rem;
+  }
+
+  .monetary-card {
+    padding: 18px 14px;
+  }
+
+  .monetary-title {
+    font-size: 1.3rem;
+  }
+
+  .monetary-desc {
+    font-size: 0.82rem;
+  }
+
+  .qr-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .qr-img-placeholder {
+    width: 130px;
+    height: 130px;
+  }
+
+  .floating-rsvp-bar {
+    bottom: 10px;
+    padding: 8px 14px;
+    gap: 10px;
+    border-radius: 40px;
+  }
+
+  .floating-rsvp-bar span {
+    font-size: 0.78rem !important;
+  }
+
+  .floating-rsvp-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+
+  .music-toggle-btn {
+    top: 14px;
+    right: 14px;
+    padding: 6px 12px;
+    font-size: 0.78rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   EXTRA SMALL PHONE (below 320px — iPhone SE / older devices)
+   -------------------------------------------------------------------------- */
+@media (max-width: 319px) {
+  .page-wrapper {
+    padding: 8px 8px 90px;
+  }
+
+  .hero-photo-wrapper {
+    width: 140px;
+    height: 140px;
+  }
+
+  .hero-main-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-tag {
+    font-size: 1.3rem;
+  }
+
+  .hero-banner-img {
+    height: 120px;
+  }
+
+  .welcome-title {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .date-main {
+    font-size: 1.5rem;
+  }
+
+  .countdown-val {
+    font-size: 1.1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   LANDSCAPE ORIENTATION (Mobile)
+   -------------------------------------------------------------------------- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .welcome-modal {
+    padding: 10px;
+  }
+
+  .welcome-card {
+    padding: 20px 24px;
+    max-width: 500px;
+  }
+
+  .welcome-flower-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .welcome-title {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+  }
+
+  .welcome-date-text {
+    margin-bottom: 12px;
+  }
+
+  .btn-open-invitation {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+
+  .hero-photo-wrapper {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   PRINT STYLES
+   -------------------------------------------------------------------------- */
+@media print {
+  .music-toggle-btn,
+  .floating-rsvp-bar,
+  #petals-canvas,
+  .welcome-modal {
+    display: none !important;
+  }
+
+  .page-wrapper {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  body {
+    background: #ffffff;
+  }
+}
+
