@@ -923,10 +923,11 @@ section {
    HD IMAGE QUALITY & ADAPTIVE RESPONSIVE RULES
    ========================================================================== */
 
-/* HD Image Rendering */
+/* HD Image Rendering - crisp, sharp, no blur */
 img {
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
+  max-width: 100%;
+  height: auto;
+  image-rendering: auto;
   -ms-interpolation-mode: bicubic;
 }
 
@@ -937,12 +938,7 @@ img {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform: translateZ(0);
-}
-
-/* Make all images responsive by default */
-img {
-  max-width: 100%;
-  height: auto;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* --------------------------------------------------------------------------
