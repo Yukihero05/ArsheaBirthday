@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're Invited! • Baby Arshea's Christening 🌼</title>
+  <meta name="description" content="Join us in celebrating the Christening of Baby Arshea. Date, location details, dress code, godparents list, and RSVP form.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Floating Falling Petals Background Canvas -->
+  <canvas id="petals-canvas" aria-hidden="true"></canvas>
+
+  <!-- Background Music Audio & Floating Toggle Button -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=sweet-lullaby-113886.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="music-toggle-btn" class="music-toggle-btn paused" aria-label="Toggle background music">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+    </svg>
+    <span>Music</span>
+    <div class="music-waves">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+
+  <!-- Welcome / Envelope Invitation Modal -->
+  <div id="welcome-modal" class="welcome-modal">
+    <div class="welcome-card">
+      <svg class="welcome-flower-icon" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="16" fill="#F4C430" />
+        <circle cx="50" cy="20" r="14" fill="#FFF8DC" />
+        <circle cx="50" cy="80" r="14" fill="#FFF8DC" />
+        <circle cx="20" cy="50" r="14" fill="#FFF8DC" />
+        <circle cx="80" cy="50" r="14" fill="#FFF8DC" />
+        <circle cx="29" cy="29" r="14" fill="#FFF8DC" />
+        <circle cx="71" cy="71" r="14" fill="#FFF8DC" />
+        <circle cx="29" cy="71" r="14" fill="#FFF8DC" />
+        <circle cx="71" cy="29" fill="#FFF8DC" r="14" />
+      </svg>
+      <p class="welcome-subtitle">You are cordially invited to</p>
+      <h1 class="welcome-title">Arshea's Christening</h1>
+      <p class="welcome-date-text">September 26, 2026 • 12:00 PM</p>
+      <button id="btn-open-invitation" class="btn-open-invitation">
+        ✉️ Open Invitation
+      </button>
+    </div>
+  </div>
+
+  <!-- Sticky Bottom RSVP Bar for Mobile -->
+  <div class="floating-rsvp-bar">
+    <span style="font-size: 0.85rem; color: var(--text-dark); font-weight: 500;">🌼 Celebrate with us!</span>
+    <a href="#rsvp-section" class="floating-rsvp-btn">RSVP Now</a>
+  </div>
+
+  <main class="page-wrapper">
+
+    <!-- HERO SECTION -->
+    <section id="hero-section" class="hero-section">
+      <div class="hero-banner-container">
+        <img src="assets/images/banner.jpg" alt="Floral Banner" class="hero-banner-img">
+        <div class="hero-banner-overlay">
+          <p class="hero-tag">You're invited to</p>
+          <h1 class="hero-main-title">Baby Arshea's<br>Christening</h1>
+          <p class="hero-sub-script">A celebration of love & blessings</p>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrapper">
+        <img src="assets/images/hero.jpg" alt="Baby Arshea" class="hero-photo-img">
+        <div class="hero-photo-ring"></div>
+      </div>
+
+      <!-- Live Countdown Timer -->
+      <div class="countdown-container">
+        <div class="countdown-header">Countdown to Special Day</div>
+        <div class="countdown-grid">
+          <div class="countdown-card">
+            <div class="countdown-val" id="cd-days">00</div>
+            <div class="countdown-lbl">Days</div>
+          </div>
+          <div class="countdown-card">
+            <div class="countdown-val" id="cd-hours">00</div>
+            <div class="countdown-lbl">Hours</div>
+          </div>
+          <div class="countdown-card">
+            <div class="countdown-val" id="cd-minutes">00</div>
+            <div class="countdown-lbl">Mins</div>
+          </div>
+          <div class="countdown-card">
+            <div class="countdown-val" id="cd-seconds">00</div>
+            <div class="countdown-lbl">Secs</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="floral-divider">
+        <span class="divider-line"></span>
+        <span class="divider-icon">🌼</span>
+        <span class="divider-line"></span>
+      </div>
+    </section>
+
+    <!-- EVENT DETAILS -->
+    <section id="event-details">
+      <div class="section-header">
+        <span class="section-tagline">When & Where</span>
+        <h2 class="section-title">Event Details</h2>
+      </div>
+
+      <div class="date-highlight-card">
+        <span class="date-pill">Save The Date</span>
+        <div class="date-main">September 26, 2026</div>
+        <div class="date-sub">Saturday • 12:00 PM</div>
+      </div>
+
+      <div class="location-card">
+        <div class="location-header">
+          <div class="location-icon-box">⛪</div>
+          <div>
+            <span class="location-badge">Christening Ceremony</span>
+            <h3 class="location-name">National Shrine of the Sacred Heart</h3>
+            <p class="location-address">San Antonio Village, Makati City, Metro Manila</p>
+          </div>
+        </div>
+        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn-map">
+          📍 View Church Map
+        </a>
+      </div>
+
+      <div class="location-card">
+        <div class="location-header">
+          <div class="location-icon-box">🎉</div>
+          <div>
+            <span class="location-badge">Reception & Lunch</span>
+            <h3 class="location-name">Shakey's Pasong Tamo</h3>
+            <p class="location-address">Chino Roces Ave, Makati City, Metro Manila</p>
+          </div>
+        </div>
+        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn-map">
+          📍 View Reception Map
+        </a>
+      </div>
+    </section>
+
+    <!-- DRESS CODE -->
+    <section id="dress-code">
+      <div class="section-header">
+        <span class="section-tagline">Attire Guide</span>
+        <h2 class="section-title">Dress Code</h2>
+      </div>
+
+      <div class="dresscode-card">
+        <h3 class="dresscode-theme">Shades of Pastel Yellow</h3>
+        <p class="dresscode-desc">
+          We invite all our loved ones to celebrate in harmony with our daisy theme! Please wear your favorite soft, sunny pastel yellow or cream outfits.
+        </p>
+
+        <div class="palette-grid">
+          <div class="swatch-item" data-name="Buttercup Yellow">
+            <div class="swatch-circle" style="background-color: var(--swatch-buttercup);"></div>
+            <span class="swatch-label">Buttercup</span>
+          </div>
+          <div class="swatch-item" data-name="Soft Cream">
+            <div class="swatch-circle" style="background-color: var(--swatch-cream); border-color: #e2d2a4;"></div>
+            <span class="swatch-label">Cream</span>
+          </div>
+          <div class="swatch-item" data-name="Primrose">
+            <div class="swatch-circle" style="background-color: var(--swatch-primrose);"></div>
+            <span class="swatch-label">Primrose</span>
+          </div>
+          <div class="swatch-item" data-name="Daisy Honey">
+            <div class="swatch-circle" style="background-color: var(--swatch-honey);"></div>
+            <span class="swatch-label">Honey</span>
+          </div>
+          <div class="swatch-item" data-name="Sunlight">
+            <div class="swatch-circle" style="background-color: var(--swatch-sunlight);"></div>
+            <span class="swatch-label">Sunlight</span>
+          </div>
+          <div class="swatch-item" data-name="Warm Vanilla">
+            <div class="swatch-circle" style="background-color: #fdf5e6; border-color: #dfd5be;"></div>
+            <span class="swatch-label">Vanilla</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTO GALLERY -->
+    <section id="gallery">
+      <div class="section-header">
+        <span class="section-tagline">Sweet Milestones</span>
+        <h2 class="section-title">Photo Gallery</h2>
+        <p class="section-subtitle">A glimpse into baby Arshea's precious moments</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="polaroid-card">
+          <img src="assets/images/gallery1.jpg" alt="Arshea Moment 1" class="polaroid-img">
+          <div class="polaroid-caption">Pure Joy & Giggles</div>
+        </div>
+        <div class="polaroid-card">
+          <img src="assets/images/gallery2.jpg" alt="Arshea Moment 2" class="polaroid-img">
+          <div class="polaroid-caption">Little Sunshine</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GODPARENTS -->
+    <section id="godparents">
+      <div class="section-header">
+        <span class="section-tagline">Guiding Angels</span>
+        <h2 class="section-title">Godparents</h2>
+        <p class="section-subtitle">Thank you for guiding Arshea with love & prayers</p>
+      </div>
+
+      <div class="godparents-container">
+        <div class="godparents-card">
+          <div class="godparents-title">
+            <span>Ninangs</span>
+          </div>
+          <ul class="godparents-list">
+            <li>Altea Mae Sapallo</li>
+            <li>Alliyah Faye Magpantay</li>
+            <li>Geanely Eryka Balot</li>
+            <li>Cristel Verdera</li>
+            <li>Jazcha Elijah Balot</li>
+            <li>Daphne Grace Faustino</li>
+            <li>Blessed Aira Mendoza</li>
+          </ul>
+        </div>
+
+        <div class="godparents-card">
+          <div class="godparents-title">
+            <span>Ninongs</span>
+          </div>
+          <ul class="godparents-list">
+            <li>Shawn Khrain Buenaventura</li>
+            <li>Miguel Biazon</li>
+            <li>Aldwin Brent Magpantay</li>
+            <li>Kirk Zedrijk Balot</li>
+            <li>Nicole Manansala</li>
+            <li>Karl Joshua Gonzales</li>
+            <li>Kyle Matthew Dabu</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- GIFT GUIDE -->
+    <section id="gift-guide">
+      <div class="section-header">
+        <span class="section-tagline">With Love</span>
+        <h2 class="section-title">Gift Guide</h2>
+        <p class="section-subtitle">Your presence and prayers are our greatest gifts! For those who wish to bless Arshea, here are some ideas:</p>
+      </div>
+
+      <div class="gift-grid">
+        <div class="gift-item-card">
+          <div class="gift-icon">👗</div>
+          <div>
+            <div class="gift-item-title">Baby Clothes (1 Year)</div>
+            <div class="gift-item-desc">Comfortable dresses, rompers, or pastel daily wear sized 12 months.</div>
+          </div>
+        </div>
+        <div class="gift-item-card">
+          <div class="gift-icon">🧸</div>
+          <div>
+            <div class="gift-item-title">Educational Toys / Books</div>
+            <div class="gift-item-desc">Sensory toys, wooden blocks, or colorful storybooks.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="monetary-card">
+        <div class="monetary-title">Digital Red Envelope</div>
+        <p class="monetary-desc">For Arshea's future savings & milestones. E-transfers are warmly appreciated.</p>
+
+        <div class="qr-grid">
+          <div class="qr-box">
+            <span class="qr-badge gcash">GCash</span>
+            <div class="qr-img-placeholder">
+              <span style="font-size: 2rem;">📲</span>
+              <span>GCash QR Code</span>
+            </div>
+          </div>
+
+          <div class="qr-box">
+            <span class="qr-badge maya">Maya</span>
+            <div class="qr-img-placeholder">
+              <span style="font-size: 2rem;">💳</span>
+              <span>Maya QR Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP FORM -->
+    <section id="rsvp-section">
+      <div class="section-header">
+        <span class="section-tagline">Kindly Respond</span>
+        <h2 class="section-title">RSVP Form</h2>
+      </div>
+
+      <div class="rsvp-card">
+        <form id="rsvp-form">
+          <div class="form-group">
+            <label for="attendee-name" class="form-label">Full Name of Attendee(s) *</label>
+            <input type="text" id="attendee-name" class="form-input" placeholder="e.g. Maria Santos & Family" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Total Number of Guests</label>
+            <div class="counter-wrapper">
+              <span style="font-size: 0.9rem; color: var(--text-muted);">Number of Attendees:</span>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <button type="button" class="counter-btn" id="btn-guest-minus">-</button>
+                <span class="counter-num" id="guest-count-display">1</span>
+                <button type="button" class="counter-btn" id="btn-guest-plus">+</button>
+                <input type="hidden" id="guest-count-input" value="1">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="attendee-message" class="form-label">Message / Blessing for Baby Arshea</label>
+            <textarea id="attendee-message" class="form-textarea" placeholder="Share a sweet prayer or wish..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit-rsvp">Confirm Attendance 🌼</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
