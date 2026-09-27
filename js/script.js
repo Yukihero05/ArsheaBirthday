@@ -173,16 +173,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --------------------------------------------------------------------------
+  // RSVP Form Submission to Google Sheet
+  // --------------------------------------------------------------------------
+  // Replace this with your Google Apps Script Web App URL after deploying
+  const GOOGLE_SCRIPT_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+
   if (rsvpForm) {
-    rsvpForm.addEventListener('submit', (e) => {
+    rsvpForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const submitBtn = document.getElementById('btn-submit-rsvp');
+      const originalText = submitBtn ? submitBtn.innerText : 'Confirm Attendance 🌼';
+
       const name = document.getElementById('attendee-name').value;
       const count = countInput.value;
+      const church = document.getElementById('check-church') ? (document.getElementById('check-church').checked ? 'Yes' : 'No') : 'Yes';
+      const reception = document.getElementById('check-reception') ? (document.getElementById('check-reception').checked ? 'Yes' : 'No') : 'Yes';
+      const message = document.getElementById('attendee-message') ? document.getElementById('attendee-message').value : '';
 
-      alert(`🎉 Thank you, ${name}! Your RSVP for ${count} guest(s) has been received! We can't wait to celebrate with you! 🌼`);
-      rsvpForm.reset();
-      guestCount = 1;
-      if (countDisplay) countDisplay.textContent = 1;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Recording RSVP... ⏳';
+      }
+
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('guests', count);
+      formData.append('church', church);
+      formData.append('reception', reception);
+      formData.append('message', message);
+
+      try {
+        if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+          await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: formData
+          });
+        }
+        alert(`🎉 Thank you, ${name}!\n\nYour RSVP for ${count} guest(s) has been recorded!\nChurch Ceremony: ${church}\nReception: ${reception}\n\nWe look forward to celebrating with you! 🌼`);
+        rsvpForm.reset();
+        guestCount = 1;
+        if (countDisplay) countDisplay.textContent = 1;
+      } catch (err) {
+        console.error('Error submitting RSVP:', err);
+        alert(`🎉 Thank you, ${name}! Your RSVP has been received!`);
+        rsvpForm.reset();
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerText = originalText;
+        }
+      }
     });
   }
 

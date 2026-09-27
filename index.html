@@ -313,7 +313,21 @@
         <form id="rsvp-form">
           <div class="form-group">
             <label for="attendee-name" class="form-label">Full Name of Attendee(s) *</label>
-            <input type="text" id="attendee-name" class="form-input" placeholder="e.g. Maria Santos & Family" required>
+            <input type="text" id="attendee-name" name="name" class="form-input" placeholder="e.g. Maria Santos & Family" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Which event will you attend? *</label>
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 6px;">
+              <label style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; cursor: pointer;">
+                <input type="checkbox" id="check-church" name="church" checked style="width: 18px; height: 18px; accent-color: var(--accent-gold);">
+                <span>⛪ Church Ceremony (12:00 PM)</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; cursor: pointer;">
+                <input type="checkbox" id="check-reception" name="reception" checked style="width: 18px; height: 18px; accent-color: var(--accent-gold);">
+                <span>🎉 Reception & Lunch (Shakey's Pasong Tamo)</span>
+              </label>
+            </div>
           </div>
 
           <div class="form-group">
@@ -324,17 +338,17 @@
                 <button type="button" class="counter-btn" id="btn-guest-minus">-</button>
                 <span class="counter-num" id="guest-count-display">1</span>
                 <button type="button" class="counter-btn" id="btn-guest-plus">+</button>
-                <input type="hidden" id="guest-count-input" value="1">
+                <input type="hidden" id="guest-count-input" name="guests" value="1">
               </div>
             </div>
           </div>
 
           <div class="form-group">
             <label for="attendee-message" class="form-label">Message / Blessing for Baby Arshea</label>
-            <textarea id="attendee-message" class="form-textarea" placeholder="Share a sweet prayer or wish..."></textarea>
+            <textarea id="attendee-message" name="message" class="form-textarea" placeholder="Share a sweet prayer or wish for baby Arshea..."></textarea>
           </div>
 
-          <button type="submit" class="btn-submit-rsvp">Confirm Attendance 🌼</button>
+          <button type="submit" id="btn-submit-rsvp" class="btn-submit-rsvp">Confirm Attendance 🌼</button>
         </form>
       </div>
     </section>
