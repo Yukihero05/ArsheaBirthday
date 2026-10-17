@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You're Invited! • Baby Arshea's 1st Birthday & Christening 🌸</title>
-  <meta name="description" content="Join us in celebrating the 1st Birthday and Christening of Baby Arshea. Date, location details, dress code, godparents list, and RSVP form.">
-  
+  <title>You're Invited! • Arshea Faye's Fairy First Birthday & Christening 🌸</title>
+  <meta name="description"
+    content="Join us in celebrating Arshea Faye's Fairy First Birthday and Christening. Event date, church & reception details, dress code, and RSVP form.">
+
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <!-- Floating Falling Petals Background Canvas -->
@@ -21,7 +24,7 @@
 
   <button id="music-toggle-btn" class="music-toggle-btn paused" aria-label="Toggle background music">
     <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
     </svg>
     <span>Music</span>
     <div class="music-waves">
@@ -31,24 +34,56 @@
     </div>
   </button>
 
-  <!-- Welcome / Envelope Invitation Modal -->
-  <div id="welcome-modal" class="welcome-modal">
-    <div class="welcome-card">
-      <svg class="welcome-flower-icon" viewBox="0 0 100 100">
-        <!-- Fairy Butterfly / Flower Wings SVG -->
-        <circle cx="50" cy="50" r="14" fill="#d85c7c" />
-        <ellipse cx="32" cy="38" rx="18" ry="12" fill="#f8bbd0" transform="rotate(-25 32 38)" opacity="0.9" />
-        <ellipse cx="68" cy="38" rx="18" ry="12" fill="#f8bbd0" transform="rotate(25 68 38)" opacity="0.9" />
-        <ellipse cx="34" cy="62" rx="14" ry="10" fill="#f48fb1" transform="rotate(25 34 62)" opacity="0.8" />
-        <ellipse cx="66" cy="62" rx="14" ry="10" fill="#f48fb1" transform="rotate(-25 66 62)" opacity="0.8" />
-        <circle cx="50" cy="50" r="8" fill="#ffd1dc" />
-      </svg>
-      <p class="welcome-subtitle">You are cordially invited to celebrate</p>
-      <h1 class="welcome-title">Arshea's 1st Birthday<br>&amp; Christening</h1>
-      <p class="welcome-date-text">November 14, 2026 • 10:00 AM</p>
-      <button id="btn-open-invitation" class="btn-open-invitation">
-        ✉️ Open Invitation 🧚✨
-      </button>
+  <!-- Welcome Invitation Modal -->
+  <div id="welcome-modal" class="welcome-modal" role="dialog" aria-modal="true" aria-label="Official Invitation">
+    <div class="welcome-card-container">
+
+      <!-- Cutie Floating Sparkles -->
+      <span class="fairy-sparkle s1" aria-hidden="true">✨</span>
+      <span class="fairy-sparkle s2" aria-hidden="true">🌸</span>
+      <span class="fairy-sparkle s3" aria-hidden="true">⭐</span>
+      <span class="fairy-sparkle s4" aria-hidden="true">🧚</span>
+
+      <!-- The Storybook Invitation Frame -->
+      <div class="fairy-invitation-frame" id="fairy-intro-card">
+        <div class="fairy-card-img-wrapper" id="fairy-card-img-btn" title="Click to open invitation">
+          <img src="assets/images/fairy-intro.jpg"
+            alt="Arshea Faye's Fairy First Birthday and Christening Official Invitation" class="fairy-card-artwork"
+            id="fairy-artwork-img" loading="eager">
+          <div class="fairy-card-shimmer"></div>
+        </div>
+      </div>
+
+      <!-- Action Button & Countdown -->
+      <div class="welcome-action-wrap">
+        <button id="btn-open-invitation" class="btn-open-fairy-invitation" aria-label="Open invitation">
+          Open Invitation 🧚✨
+        </button>
+
+        <!-- Live Countdown Timer below Open Invitation -->
+        <div class="intro-countdown-container">
+          <div class="intro-countdown-header">Countdown to Special Day ⏳</div>
+          <div class="countdown-grid">
+            <div class="countdown-card">
+              <div class="countdown-val cd-days" id="intro-cd-days">00</div>
+              <div class="countdown-lbl">Days</div>
+            </div>
+            <div class="countdown-card">
+              <div class="countdown-val cd-hours" id="intro-cd-hours">00</div>
+              <div class="countdown-lbl">Hours</div>
+            </div>
+            <div class="countdown-card">
+              <div class="countdown-val cd-minutes" id="intro-cd-minutes">00</div>
+              <div class="countdown-lbl">Mins</div>
+            </div>
+            <div class="countdown-card">
+              <div class="countdown-val cd-seconds" id="intro-cd-seconds">00</div>
+              <div class="countdown-lbl">Secs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -63,17 +98,28 @@
     <!-- HERO SECTION -->
     <section id="hero-section" class="hero-section">
       <div class="hero-banner-container">
-        <img src="assets/images/banner.jpg" alt="Baby Fairy Wonderland Banner" class="hero-banner-img">
+        <img src="assets/images/banner.png" alt="Baby Fairy Wonderland Banner" class="hero-banner-img">
         <div class="hero-banner-overlay">
-          <p class="hero-tag">You're invited to celebrate</p>
-          <h1 class="hero-main-title">Baby Arshea's<br>1st Birthday &amp; Christening</h1>
-          <p class="hero-sub-script">A celebration of 1 year of love, joy &amp; blessings</p>
+          <p class="hero-tag">Please join us for</p>
+          <div class="hero-fairy-heart-divider">
+            <span class="heart-line"></span>
+            <span class="heart-icon">♥</span>
+            <span class="heart-line"></span>
+          </div>
+          <h1 class="hero-main-title">
+            <span class="hero-name-serif">ARSHEA FAYE'S</span>
+            <span class="hero-script-first">fairy first</span>
+            <span class="hero-event-serif">BIRTHDAY AND CHRISTENING</span>
+          </h1>
+          <p class="hero-sub-script">Saturday, November 14, 2026 • 9:30 AM</p>
         </div>
       </div>
 
-      <!-- Circular Photo Frame of Baby Arshea (Photo 1) with Decorative Ring -->
+      <!-- Circular Photo Frame of Baby Arshea with Decorative Ring -->
       <div class="hero-photo-wrapper" id="hero-photo-card" title="Click to view in crystal HD">
-        <img src="assets/images/hero.jpg" alt="Baby Arshea - 1st Birthday & Christening" class="hero-photo-img" id="hero-photo" data-hd-src="assets/images/hero.jpg" data-hd-caption="Baby Arshea • Our Little Fairy Princess 🌸">
+        <img src="assets/images/hero.jpg" alt="Baby Arshea Faye - Fairy First Birthday & Christening"
+          class="hero-photo-img" id="hero-photo" data-hd-src="assets/images/milestones/photoshoot1.jpg"
+          data-hd-caption="Baby Arshea Faye • Our Little Fairy Princess 🌸">
         <div class="hero-photo-ring"></div>
       </div>
 
@@ -82,19 +128,19 @@
         <div class="countdown-header">Countdown to Special Day ⏳</div>
         <div class="countdown-grid">
           <div class="countdown-card">
-            <div class="countdown-val" id="cd-days">00</div>
+            <div class="countdown-val cd-days" id="cd-days">00</div>
             <div class="countdown-lbl">Days</div>
           </div>
           <div class="countdown-card">
-            <div class="countdown-val" id="cd-hours">00</div>
+            <div class="countdown-val cd-hours" id="cd-hours">00</div>
             <div class="countdown-lbl">Hours</div>
           </div>
           <div class="countdown-card">
-            <div class="countdown-val" id="cd-minutes">00</div>
+            <div class="countdown-val cd-minutes" id="cd-minutes">00</div>
             <div class="countdown-lbl">Mins</div>
           </div>
           <div class="countdown-card">
-            <div class="countdown-val" id="cd-seconds">00</div>
+            <div class="countdown-val cd-seconds" id="cd-seconds">00</div>
             <div class="countdown-lbl">Secs</div>
           </div>
         </div>
@@ -117,19 +163,20 @@
       <div class="date-highlight-card">
         <span class="date-pill">Save The Date</span>
         <div class="date-main">November 14, 2026</div>
-        <div class="date-sub">Saturday • 10:00 AM</div>
+        <div class="date-sub">Saturday • 9:30 AM</div>
       </div>
 
       <div class="location-card">
         <div class="location-header">
           <div class="location-icon-box">⛪</div>
           <div>
-            <span class="location-badge">Christening Ceremony • 10:00 AM</span>
+            <span class="location-badge">Christening Ceremony • 9:30 AM</span>
             <h3 class="location-name">Our Lady of the Airways Parish</h3>
             <p class="location-address">Chapel Road, Pasay / Parañaque, Metro Manila</p>
           </div>
         </div>
-        <a href="https://www.google.com/maps/search/?api=1&query=Our+Lady+of+the+Airways+Parish+Pasay" target="_blank" rel="noopener noreferrer" class="btn-map">
+        <a href="https://www.google.com/maps/search/?api=1&query=Our+Lady+of+the+Airways+Parish+Pasay" target="_blank"
+          rel="noopener noreferrer" class="btn-map">
           📍 View Church Map
         </a>
       </div>
@@ -138,12 +185,13 @@
         <div class="location-header">
           <div class="location-icon-box">🎂</div>
           <div>
-            <span class="location-badge">1st Birthday Party &amp; Lunch • 12:00 NN</span>
-            <h3 class="location-name">Jollibee Parañaque</h3>
+            <span class="location-badge">1st Birthday Party &amp; Lunch • 12:00 PM</span>
+            <h3 class="location-name">Jollibee Unioil Parañaque City</h3>
             <p class="location-address">Parañaque City, Metro Manila</p>
           </div>
         </div>
-        <a href="https://www.google.com/maps/search/?api=1&query=Jollibee+Paranaque" target="_blank" rel="noopener noreferrer" class="btn-map">
+        <a href="https://www.google.com/maps/search/?api=1&query=Jollibee+Unioil+Paranaque" target="_blank"
+          rel="noopener noreferrer" class="btn-map">
           📍 View Reception Map
         </a>
       </div>
@@ -159,7 +207,8 @@
       <div class="dresscode-card">
         <h3 class="dresscode-theme">Any Pastel Color 🌸</h3>
         <p class="dresscode-desc">
-          Our little fairy is turning One! We invite all our loved ones to dress in any beautiful pastel color of your choice — soft pink, lavender, mint, peach, baby blue, or cream.
+          Our little fairy is turning One! We invite all our loved ones to dress in any beautiful pastel color of your
+          choice — soft pink, lavender, mint, peach, baby blue, or cream.
         </p>
 
         <div class="palette-grid">
@@ -193,7 +242,8 @@
       <div class="dresscode-card" style="margin-top: 16px;">
         <h3 class="dresscode-theme">For Our Ninongs &amp; Ninangs ⭐</h3>
         <p class="dresscode-desc">
-          To help our Godparents shine like bright stars on this special day, we kindly ask you to wear <strong style="color: var(--dark-rose); font-size: 1.1em;">WHITE</strong>.
+          To help our Godparents shine like bright stars on this special day, we kindly ask you to wear <strong
+            style="color: var(--dark-rose); font-size: 1.1em;">WHITE</strong>.
         </p>
         <div style="display: flex; justify-content: center; margin-top: 12px;">
           <div class="swatch-item" data-name="White">
@@ -204,115 +254,619 @@
       </div>
     </section>
 
-    <!-- PHOTO GALLERY -->
-    <section id="gallery">
+    <!-- GODPARENTS SECTION -->
+    <section id="godparents">
       <div class="section-header">
-        <span class="section-tagline">Sweet Milestones</span>
-        <h2 class="section-title">Photo Gallery</h2>
-        <p class="section-subtitle">Precious moments of Baby Arshea • Tap any photo to view in crystal HD ✨</p>
+        <span class="section-tagline">Guiding Stars</span>
+        <h2 class="section-title">Our Beloved Godparents</h2>
+        <p class="section-subtitle">Thank you for guiding our little fairy Arshea Faye with your love, prayers, and
+          blessings ✨</p>
       </div>
 
-      <div class="gallery-grid">
-        <div class="polaroid-card" data-hd-src="assets/images/gallery1.jpg" data-hd-caption="Baby Arshea • Our Little Fairy 🧚">
-          <div class="polaroid-img-wrapper">
-            <img src="assets/images/gallery1.jpg" alt="Baby Arshea - Our Little Fairy" class="polaroid-img">
-            <span class="hd-tag">HD View 🔍</span>
-          </div>
-          <div class="polaroid-caption">Our Little Fairy ✨</div>
+      <!-- Godmothers (Ninangs) -->
+      <div class="godparents-card">
+        <div class="godparents-header">
+          <span class="godparents-badge ninang-badge">🌸 GODMOTHERS (NINANGS)</span>
         </div>
-        <div class="polaroid-card" data-hd-src="assets/images/gallery2.jpg" data-hd-caption="Baby Arshea • Pure Joy &amp; Blessings 🌸">
-          <div class="polaroid-img-wrapper">
-            <img src="assets/images/gallery2.jpg" alt="Baby Arshea - Pure Joy and Blessings" class="polaroid-img">
-            <span class="hd-tag">HD View 🔍</span>
+        <div class="godparents-grid">
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Jhoemalyn Alcampado</span>
           </div>
-          <div class="polaroid-caption">Pure Joy &amp; Blessings 🌸</div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Charmien Arquilos</span>
+          </div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Keishana Martha
+              Tabora</span></div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Laine Torres</span></div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Rosebelle Aguilar</span>
+          </div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Edelisa Guinto</span></div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Mary Joy Chavez</span>
+          </div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Cherrylyn Dayao</span>
+          </div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Ma. Daricel Kendra
+              Borja</span></div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Hannah Amina Talon</span>
+          </div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Angelica Rosales</span>
+          </div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Ghene Lai Paulino</span>
+          </div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Colene May Alba</span>
+          </div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Allyson Genio</span></div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Shela Barrientos</span>
+          </div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Rica Marfil</span></div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Bella Agra</span></div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Erika Mel Saguid</span>
+          </div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Ellene Chavez</span></div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Patricia Rago</span></div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Diane Quinto</span></div>
+          <div class="godparent-item"><span class="gp-bullet">🌸</span><span class="gp-name">Edna Mae Junio</span></div>
+        </div>
+      </div>
+
+      <!-- Godfathers (Ninongs) -->
+      <div class="godparents-card" style="margin-top: 20px;">
+        <div class="godparents-header">
+          <span class="godparents-badge ninong-badge">⭐ GODFATHERS (NINONGS)</span>
+        </div>
+        <div class="godparents-grid">
+          <div class="godparent-item"><span class="gp-bullet">⭐</span><span class="gp-name">Luis Lorenzo Naui</span>
+          </div>
+          <div class="godparent-item"><span class="gp-bullet">⭐</span><span class="gp-name">Benedict Pijano</span></div>
+          <div class="godparent-item"><span class="gp-bullet">⭐</span><span class="gp-name">Prince Ken Rosalejos</span>
+          </div>
+          <div class="godparent-item"><span class="gp-bullet">⭐</span><span class="gp-name">Jc Espejo</span></div>
+          <div class="godparent-item"><span class="gp-bullet">⭐</span><span class="gp-name">Ramon Torres</span></div>
+          <div class="godparent-item"><span class="gp-bullet">⭐</span><span class="gp-name">Andy Toralde</span></div>
+          <div class="godparent-item"><span class="gp-bullet">⭐</span><span class="gp-name">Genaro Hebres</span></div>
+          <div class="godparent-item"><span class="gp-bullet">⭐</span><span class="gp-name">Arvin Reyes</span></div>
+          <div class="godparent-item"><span class="gp-bullet">⭐</span><span class="gp-name">Aldrin Espanillo</span>
+          </div>
+          <div class="godparent-item"><span class="gp-bullet">⭐</span><span class="gp-name">Erven Abesar</span></div>
+          <div class="godparent-item"><span class="gp-bullet">⭐</span><span class="gp-name">Daren Dedal</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. MONTHLY MILESTONES (PINNED HORIZONTAL SCROLL) -->
+    <section id="milestones-section" class="milestones-pinned-section">
+      <div class="milestones-sticky-wrapper">
+        <div class="section-header milestones-section-header">
+          <span class="section-tagline">Growing Up to One ✨</span>
+          <h2 class="section-title">Monthly Milestones</h2>
+          <p class="section-subtitle">A fairy tale journey from her first breath to her first birthday 🌸</p>
+
+          <!-- Interactive Progress Bar & Status -->
+          <div class="milestones-progress-wrap">
+            <div class="milestones-progress-bar" id="milestones-progress-bar"></div>
+          </div>
+          <div class="milestones-status-bar">
+            <span class="milestones-scroll-hint">Scroll down to journey through all 12 milestones ⇄</span>
+            <span class="milestones-counter-badge" id="milestones-counter">Newborn (1 of 12)</span>
+          </div>
+        </div>
+
+        <!-- Horizontal Track Viewport -->
+        <div class="milestones-track-viewport" id="milestones-viewport">
+          <!-- Manual Navigation Arrows -->
+          <button type="button" class="reel-nav-btn reel-prev" id="milestones-prev"
+            aria-label="Previous milestone">&#10094;</button>
+          <button type="button" class="reel-nav-btn reel-next" id="milestones-next"
+            aria-label="Next milestone">&#10095;</button>
+
+          <div class="milestones-track" id="milestones-track">
+            <!-- 1. Newborn -->
+            <div class="polaroid-card milestone-reel-card" data-category="milestone"
+              data-hd-src="assets/images/milestones/newborn.jpg" data-hd-caption="Newborn Arrival • Baby Arshea 👼">
+              <div class="polaroid-img-wrapper">
+                <img src="assets/images/milestones/newborn.jpg" alt="Baby Arshea Newborn" class="polaroid-img"
+                  loading="lazy">
+                <span class="milestone-badge">Newborn 👼</span>
+              </div>
+              <div class="polaroid-caption">
+                <div class="polaroid-title">Newborn</div>
+              </div>
+            </div>
+
+            <!-- 2. 1 Month -->
+            <div class="polaroid-card milestone-reel-card" data-category="milestone"
+              data-hd-src="assets/images/milestones/1month.jpg" data-hd-caption="1 Month • Baby Arshea 👑">
+              <div class="polaroid-img-wrapper">
+                <img src="assets/images/milestones/1month.jpg" alt="Baby Arshea 1 Month Old" class="polaroid-img"
+                  loading="lazy">
+                <span class="milestone-badge">1 Month 👑</span>
+              </div>
+              <div class="polaroid-caption">
+                <div class="polaroid-title">1 Month</div>
+              </div>
+            </div>
+
+            <!-- 3. 2 Months -->
+            <div class="polaroid-card milestone-reel-card" data-category="milestone"
+              data-hd-src="assets/images/milestones/2months.jpg" data-hd-caption="2 Months • Baby Arshea 💕">
+              <div class="polaroid-img-wrapper">
+                <img src="assets/images/milestones/2months.jpg" alt="Baby Arshea 2 Months Old" class="polaroid-img"
+                  loading="lazy">
+                <span class="milestone-badge">2 Months 💕</span>
+              </div>
+              <div class="polaroid-caption">
+                <div class="polaroid-title">2 Months</div>
+              </div>
+            </div>
+
+            <!-- 4. 3 Months -->
+            <div class="polaroid-card milestone-reel-card" data-category="milestone"
+              data-hd-src="assets/images/milestones/3months.jpg" data-hd-caption="3 Months • Baby Arshea ☀️">
+              <div class="polaroid-img-wrapper">
+                <img src="assets/images/milestones/3months.jpg" alt="Baby Arshea 3 Months Old" class="polaroid-img"
+                  loading="lazy">
+                <span class="milestone-badge">3 Months ☀️</span>
+              </div>
+              <div class="polaroid-caption">
+                <div class="polaroid-title">3 Months</div>
+              </div>
+            </div>
+
+            <!-- 5. 4 Months -->
+            <div class="polaroid-card milestone-reel-card" data-category="milestone"
+              data-hd-src="assets/images/milestones/4months.jpg" data-hd-caption="4 Months • Baby Arshea 🌸">
+              <div class="polaroid-img-wrapper">
+                <img src="assets/images/milestones/4months.jpg" alt="Baby Arshea 4 Months Old" class="polaroid-img"
+                  loading="lazy">
+                <span class="milestone-badge">4 Months 🌸</span>
+              </div>
+              <div class="polaroid-caption">
+                <div class="polaroid-title">4 Months</div>
+              </div>
+            </div>
+
+            <!-- 6. 5 Months -->
+            <div class="polaroid-card milestone-reel-card" data-category="milestone"
+              data-hd-src="assets/images/milestones/5months.jpg" data-hd-caption="5 Months • Baby Arshea ✨">
+              <div class="polaroid-img-wrapper">
+                <img src="assets/images/milestones/5months.jpg" alt="Baby Arshea 5 Months Old" class="polaroid-img"
+                  loading="lazy">
+                <span class="milestone-badge">5 Months ✨</span>
+              </div>
+              <div class="polaroid-caption">
+                <div class="polaroid-title">5 Months</div>
+              </div>
+            </div>
+
+            <!-- 7. 6 Months -->
+            <div class="polaroid-card milestone-reel-card" data-category="milestone"
+              data-hd-src="assets/images/milestones/6months.jpg" data-hd-caption="6 Months • Baby Arshea 🧚">
+              <div class="polaroid-img-wrapper">
+                <img src="assets/images/milestones/6months.jpg" alt="Baby Arshea 6 Months Old" class="polaroid-img"
+                  loading="lazy">
+                <span class="milestone-badge">6 Months 🧚</span>
+              </div>
+              <div class="polaroid-caption">
+                <div class="polaroid-title">6 Months</div>
+              </div>
+            </div>
+
+            <!-- 8. 7 Months -->
+            <div class="polaroid-card milestone-reel-card" data-category="milestone"
+              data-hd-src="assets/images/milestones/7months.jpg" data-hd-caption="7 Months • Baby Arshea 🌿">
+              <div class="polaroid-img-wrapper">
+                <img src="assets/images/milestones/7months.jpg" alt="Baby Arshea 7 Months Old" class="polaroid-img"
+                  loading="lazy">
+                <span class="milestone-badge">7 Months 🌿</span>
+              </div>
+              <div class="polaroid-caption">
+                <div class="polaroid-title">7 Months</div>
+              </div>
+            </div>
+
+            <!-- 9. 8 Months -->
+            <div class="polaroid-card milestone-reel-card" data-category="milestone"
+              data-hd-src="assets/images/milestones/8months.jpg" data-hd-caption="8 Months • Baby Arshea 🎀">
+              <div class="polaroid-img-wrapper">
+                <img src="assets/images/milestones/8months.jpg" alt="Baby Arshea 8 Months Old" class="polaroid-img"
+                  loading="lazy">
+                <span class="milestone-badge">8 Months 🎀</span>
+              </div>
+              <div class="polaroid-caption">
+                <div class="polaroid-title">8 Months</div>
+              </div>
+            </div>
+
+            <!-- 10. 9 Months -->
+            <div class="polaroid-card milestone-reel-card" data-category="milestone"
+              data-hd-src="assets/images/milestones/9months.jpg" data-hd-caption="9 Months • Baby Arshea 💖">
+              <div class="polaroid-img-wrapper">
+                <img src="assets/images/milestones/9months.jpg" alt="Baby Arshea 9 Months Old" class="polaroid-img"
+                  loading="lazy">
+                <span class="milestone-badge">9 Months 💖</span>
+              </div>
+              <div class="polaroid-caption">
+                <div class="polaroid-title">9 Months</div>
+              </div>
+            </div>
+
+            <!-- 11. 10 Months -->
+            <div class="polaroid-card milestone-reel-card" data-category="milestone"
+              data-hd-src="assets/images/milestones/10months.jpg" data-hd-caption="10 Months • Baby Arshea ⭐">
+              <div class="polaroid-img-wrapper">
+                <img src="assets/images/milestones/10months.jpg" alt="Baby Arshea 10 Months Old" class="polaroid-img"
+                  loading="lazy">
+                <span class="milestone-badge">10 Months ⭐</span>
+              </div>
+              <div class="polaroid-caption">
+                <div class="polaroid-title">10 Months</div>
+              </div>
+            </div>
+
+            <!-- 12. 11 Months -->
+            <div class="polaroid-card milestone-reel-card" data-category="milestone"
+              data-hd-src="assets/images/milestones/11months.jpg" data-hd-caption="11 Months • Baby Arshea ❄️👑">
+              <div class="polaroid-img-wrapper">
+                <img src="assets/images/milestones/11months.jpg" alt="Baby Arshea 11 Months Old - Princess Anna"
+                  class="polaroid-img" loading="lazy">
+                <span class="milestone-badge">11 Months ❄️</span>
+              </div>
+              <div class="polaroid-caption">
+                <div class="polaroid-title">11 Months</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
 
+    <!-- 2. FAIRY PHOTOSHOOT (AUTOMATIC HORIZONTAL SWIPE SHOWCASE) -->
+    <section id="fairy-photoshoot" class="photoshoot-showcase-section">
+      <div class="section-header">
+        <span class="section-tagline">Enchanted Fairy Tale 🧚</span>
+        <h2 class="section-title">Fairy Photoshoot</h2>
+      </div>
+
+      <!-- Automatic Horizontal Swipe Carousel Showcase -->
+      <div class="photoshoot-carousel-container" id="photoshoot-carousel">
+        <button type="button" class="swipe-carousel-btn swipe-prev" id="swipe-prev-btn"
+          aria-label="Previous fairy photo">&#10094;</button>
+        <button type="button" class="swipe-carousel-btn swipe-next" id="swipe-next-btn"
+          aria-label="Next fairy photo">&#10095;</button>
+
+        <div class="photoshoot-slider-viewport" id="photoshoot-viewport">
+          <div class="photoshoot-slider-track" id="photoshoot-track">
+            <!-- Slide 1 -->
+            <div class="photoshoot-slide" data-index="0">
+              <div class="polaroid-card photoshoot-showcase-card featured-polaroid" data-category="photoshoot"
+                data-hd-src="assets/images/milestones/photoshoot1.jpg"
+                data-hd-caption="Fairy Photoshoot • Baby Arshea 🧚✨">
+                <div class="polaroid-img-wrapper photoshoot-aspect">
+                  <img src="assets/images/milestones/photoshoot1.jpg" alt="Baby Arshea Fairy Photoshoot"
+                    class="polaroid-img" loading="lazy">
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="photoshoot-slide" data-index="1">
+              <div class="polaroid-card photoshoot-showcase-card" data-category="photoshoot"
+                data-hd-src="assets/images/milestones/photoshoot2.jpg"
+                data-hd-caption="Fairy Photoshoot • Baby Arshea 🌸">
+                <div class="polaroid-img-wrapper photoshoot-aspect">
+                  <img src="assets/images/milestones/photoshoot2.jpg" alt="Baby Arshea Fairy Photoshoot"
+                    class="polaroid-img" loading="lazy">
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="photoshoot-slide" data-index="2">
+              <div class="polaroid-card photoshoot-showcase-card" data-category="photoshoot"
+                data-hd-src="assets/images/milestones/photoshoot3.jpg"
+                data-hd-caption="Fairy Photoshoot • Baby Arshea 🌺">
+                <div class="polaroid-img-wrapper photoshoot-aspect">
+                  <img src="assets/images/milestones/photoshoot3.jpg" alt="Baby Arshea Fairy Photoshoot"
+                    class="polaroid-img" loading="lazy">
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="photoshoot-slide" data-index="3">
+              <div class="polaroid-card photoshoot-showcase-card" data-category="photoshoot"
+                data-hd-src="assets/images/milestones/photoshoot4.jpg"
+                data-hd-caption="Fairy Photoshoot • Baby Arshea 💖">
+                <div class="polaroid-img-wrapper photoshoot-aspect">
+                  <img src="assets/images/milestones/photoshoot4.jpg" alt="Baby Arshea Fairy Photoshoot"
+                    class="polaroid-img" loading="lazy">
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="photoshoot-slide" data-index="4">
+              <div class="polaroid-card photoshoot-showcase-card" data-category="photoshoot"
+                data-hd-src="assets/images/milestones/photoshoot5.jpg"
+                data-hd-caption="Fairy Photoshoot • Baby Arshea 👑🌟">
+                <div class="polaroid-img-wrapper photoshoot-aspect">
+                  <img src="assets/images/milestones/photoshoot5.jpg" alt="Baby Arshea Fairy Photoshoot"
+                    class="polaroid-img" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination Dots -->
+        <div class="photoshoot-dots" id="photoshoot-dots">
+          <button type="button" class="dot active" data-slide="0" aria-label="Go to slide 1"></button>
+          <button type="button" class="dot" data-slide="1" aria-label="Go to slide 2"></button>
+          <button type="button" class="dot" data-slide="2" aria-label="Go to slide 3"></button>
+          <button type="button" class="dot" data-slide="3" aria-label="Go to slide 4"></button>
+          <button type="button" class="dot" data-slide="4" aria-label="Go to slide 5"></button>
+        </div>
+      </div>
+    </section>
 
     <!-- GIFT GUIDE -->
     <section id="gift-guide">
       <div class="section-header">
         <span class="section-tagline">With Love</span>
         <h2 class="section-title">Gift Guide</h2>
-        <p class="section-subtitle">Your presence and prayers are our greatest gifts!</p>
+        <p class="section-subtitle">Your presence is the greatest gift we could ask for! 💗</p>
       </div>
 
       <div class="monetary-card">
-        <div class="gift-icon" style="font-size: 2.5rem; margin-bottom: 10px;">💝</div>
+        <div class="gift-icon" style="font-size: 2.4rem; margin-bottom: 8px;">💝</div>
         <div class="monetary-title">Monetary Gift</div>
-        <p class="monetary-desc">For Arshea's future savings &amp; milestones.</p>
+        <p class="monetary-desc" style="max-width: 480px; margin: 8px auto 20px; line-height: 1.6;">
+          For those who wish to give a little something to our little princess, a monetary gift would be lovingly
+          appreciated as she begins her next chapter.
+        </p>
 
-        <div class="qr-grid">
-          <div class="qr-box">
-            <span class="qr-badge gcash">GCash</span>
-            <div class="qr-img-placeholder">
-              <span style="font-size: 2rem;">📲</span>
-              <span>GCash QR Code</span>
-            </div>
-          </div>
-
-          <div class="qr-box">
-            <span class="qr-badge maya">Maya</span>
-            <div class="qr-img-placeholder">
-              <span style="font-size: 2rem;">💳</span>
-              <span>Maya QR Code</span>
-            </div>
+        <!-- GCash QR Card Box -->
+        <div class="gcash-card-wrapper" id="gcash-card-box" data-hd-src="assets/images/gcash-qr.jpg"
+          data-hd-caption="GCash QR Code • Baby Arshea Faye 💗">
+          <div class="gcash-img-frame" title="Click to view full QR code">
+            <img src="assets/images/gcash-qr.jpg" alt="GCash QR Code for Baby Arshea Faye" class="gcash-qr-img"
+              id="gcash-qr-img">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- RSVP FORM -->
-    <section id="rsvp-section">
+    <!-- IMPORTANT REMINDERS (Parking & Plus One) -->
+    <section id="reminders" class="reminders-section">
       <div class="section-header">
-        <span class="section-tagline">Kindly Respond</span>
-        <h2 class="section-title">RSVP Form</h2>
+        <span class="section-tagline">Good to Know</span>
+        <h2 class="section-title">Important Reminders</h2>
+        <p class="section-subtitle">A few gentle notes to make our celebration comfortable and delightful for all ✨</p>
       </div>
 
-      <div class="rsvp-card">
-        <form id="rsvp-form">
-          <div class="form-group">
-            <label for="attendee-name" class="form-label">Full Name of Attendee(s) *</label>
-            <input type="text" id="attendee-name" name="name" class="form-input" placeholder="e.g. Maria Santos & Family" required>
+      <div class="reminders-grid">
+        <!-- Parking Space Note -->
+        <div class="reminder-card parking-reminder-card">
+          <div class="reminder-icon-box">🚗</div>
+          <h3 class="reminder-card-title">Parking Reminder</h3>
+          <p class="reminder-card-text">
+            Parking is available on a <strong>first-come, first-served basis</strong>.
+          </p>
+        </div>
+
+        <!-- Plus One Card with Hand-Drawn Doodle Kids -->
+        <div class="reminder-card plus-one-reminder-card">
+          <!-- Two cute doodle kids SVG matching the image -->
+          <div class="doodle-kids-container" aria-label="Cute doodle illustrations of two smiling friends">
+            <svg class="doodle-kids-svg" viewBox="0 0 140 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Left Kid: smiling girl with two pigtails -->
+              <g stroke="#261d22" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="44" cy="46" rx="19" ry="17" fill="#fffaf7" />
+                <!-- Left pigtail with hair tie -->
+                <path d="M26 36 C18 31, 13 36, 17 44 C20 48, 24 45, 26 43" />
+                <path d="M22 34 L17 29 M22 35 L26 30" />
+                <!-- Right pigtail with hair tie -->
+                <path d="M62 36 C70 31, 75 36, 71 44 C68 48, 64 45, 62 43" />
+                <path d="M66 34 L71 29 M66 35 L62 30" />
+                <!-- Bangs / fringe -->
+                <path d="M27 38 C32 43, 38 38, 44 42 C49 38, 55 43, 61 38" />
+                <!-- Eyes and Smile -->
+                <circle cx="38" cy="44" r="2" fill="#261d22" />
+                <circle cx="50" cy="44" r="2" fill="#261d22" />
+                <path d="M40 51 Q44 55 48 51" />
+              </g>
+              <!-- Right Kid: smiling girl with top curly bun / puff -->
+              <g stroke="#261d22" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="96" cy="48" rx="18" ry="16" fill="#fffaf7" />
+                <!-- Top curly ponytail puff -->
+                <path d="M89 33 C85 24, 91 17, 96 15 C101 17, 107 24, 103 33" />
+                <path d="M91 27 C94 21, 98 21, 101 27" />
+                <path d="M92 19 L89 13 M96 16 L96 10 M100 19 L103 13" />
+                <!-- Bangs -->
+                <path d="M80 41 C85 45, 91 40, 96 44 C101 40, 107 45, 112 41" />
+                <!-- Eyes and Smile -->
+                <circle cx="91" cy="47" r="2" fill="#261d22" />
+                <circle cx="102" cy="47" r="2" fill="#261d22" />
+                <path d="M93 54 Q96.5 57 100 54" />
+              </g>
+            </svg>
           </div>
 
-          <div class="form-group">
-            <label class="form-label">Which event will you attend? *</label>
-            <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 6px;">
-              <label style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; cursor: pointer;">
-                <input type="checkbox" id="check-church" name="church" checked style="width: 18px; height: 18px; accent-color: var(--accent-rose);">
-                <span>⛪ Christening Ceremony (Our Lady of the Airways Parish • 10:00 AM)</span>
-              </label>
-              <label style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; cursor: pointer;">
-                <input type="checkbox" id="check-reception" name="reception" checked style="width: 18px; height: 18px; accent-color: var(--accent-rose);">
-                <span>🎂 1st Birthday Party &amp; Lunch (Jollibee Parañaque • 12:00 NN)</span>
-              </label>
-            </div>
-          </div>
+          <h3 class="plus-one-script-title">Plus One</h3>
+          <p class="plus-one-body-text">
+            To help us accommodate everyone comfortably, our guest list has already been finalized. If you'd like to
+            bring a <strong>plus one, please let us know in advance</strong>, and we'll do our best to accommodate your
+            request.
+          </p>
+        </div>
+      </div>
+    </section>
 
-          <div class="form-group">
-            <label class="form-label">Total Number of Guests</label>
-            <div class="counter-wrapper">
-              <span style="font-size: 0.9rem; color: var(--text-muted);">Number of Attendees:</span>
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <button type="button" class="counter-btn" id="btn-guest-minus">-</button>
-                <span class="counter-num" id="guest-count-display">1</span>
-                <button type="button" class="counter-btn" id="btn-guest-plus">+</button>
-                <input type="hidden" id="guest-count-input" name="guests" value="1">
+    <!-- RSVP SECTION -->
+    <section id="rsvp-section" class="canva-rsvp-section">
+      <div class="section-header">
+        <span class="section-tagline">Kindly Respond</span>
+        <h2 class="section-title">RSVP</h2>
+      </div>
+
+      <div class="canva-rsvp-card">
+        <h2 class="canva-rsvp-heading">We'd love to celebrate with you!</h2>
+
+        <p class="canva-rsvp-lead">
+          Your response will help us finalize our guest count and make any necessary arrangements, especially if you're
+          unable to attend or would like to request a plus one.
+        </p>
+
+        <p class="canva-rsvp-deadline">
+          Kindly confirm your attendance <u><strong>on or before November 14, 2026</strong></u> by completing the RSVP
+          form below.
+        </p>
+
+        <p class="canva-rsvp-instruction">
+          Please click the button below to access the RSVP form.
+        </p>
+
+        <!-- Coral/Salmon RSVP Button & Hand-Drawn Curly Doodle Arrow -->
+        <div class="canva-rsvp-cta-row">
+          <a href="#rsvp-form-container" class="canva-rsvp-button" id="btn-scroll-rsvp">
+            RSVP
+          </a>
+          <div class="canva-curly-arrow-wrap" aria-hidden="true">
+            <svg class="canva-curly-arrow-svg" viewBox="0 0 68 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M57 7 C63 2, 67 11, 57 15 C47 19, 39 19, 48 26 C54 31, 46 37, 21 35" stroke="#5a86a6"
+                stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M28 30 L19 35 L26 41" stroke="#5a86a6" stroke-width="2.4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Integrated Interactive RSVP Form -->
+        <div class="rsvp-form-container" id="rsvp-form-container">
+          <form id="rsvp-form">
+
+            <!-- Attendance Choice (Joyfully Attending / Regretfully Declining) -->
+            <div class="form-group">
+              <label class="form-label">Will you be celebrating with us? *</label>
+              <div class="attendance-options-grid">
+                <label class="attendance-card-radio active" id="label-attending">
+                  <input type="radio" name="attendance_status" value="Joyfully Attending" checked>
+                  <span class="custom-radio-circle"></span>
+                  <span class="attendance-radio-text">🌸 Joyfully Attending</span>
+                </label>
+                <label class="attendance-card-radio" id="label-declining">
+                  <input type="radio" name="attendance_status" value="Regretfully Declining">
+                  <span class="custom-radio-circle"></span>
+                  <span class="attendance-radio-text">💌 Regretfully Declining</span>
+                </label>
               </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label for="attendee-message" class="form-label">1st Birthday &amp; Christening Blessing for Baby Arshea</label>
-            <textarea id="attendee-message" name="message" class="form-textarea" placeholder="Share a sweet prayer or 1st birthday wish for baby Arshea..."></textarea>
-          </div>
+            <!-- Full Name -->
+            <div class="form-group">
+              <label for="attendee-name" class="form-label">Full Name of Attendee(s) *</label>
+              <input type="text" id="attendee-name" name="name" class="form-input"
+                placeholder="e.g. Maria Santos & Family" required>
+            </div>
 
-          <button type="submit" id="btn-submit-rsvp" class="btn-submit-rsvp">Confirm Attendance 🌼</button>
-        </form>
+            <!-- Attending Specific Details (Ceremony, Reception, Counter, Plus-one) -->
+            <div id="attending-details-section">
+              <div class="form-group">
+                <label class="form-label">Which event will you attend? *</label>
+                <div class="event-checkboxes-list">
+                  <label class="custom-checkbox-row">
+                    <input type="checkbox" id="check-church" name="church" checked>
+                    <span class="checkbox-box"></span>
+                    <span>⛪ Christening Ceremony (Our Lady of the Airways Parish • 9:30 AM)</span>
+                  </label>
+                  <label class="custom-checkbox-row">
+                    <input type="checkbox" id="check-reception" name="reception" checked>
+                    <span class="checkbox-box"></span>
+                    <span>🎂 1st Birthday Party &amp; Lunch (Jollibee Unioil Parañaque City • 12:00 PM)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Total Number of Guests</label>
+                <div class="counter-wrapper">
+                  <span style="font-size: 0.9rem; color: var(--text-muted);">Number of Attendees:</span>
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <button type="button" class="counter-btn" id="btn-guest-minus"
+                      aria-label="Decrease guest count">-</button>
+                    <span class="counter-num" id="guest-count-display">1</span>
+                    <button type="button" class="counter-btn" id="btn-guest-plus"
+                      aria-label="Increase guest count">+</button>
+                    <input type="hidden" id="guest-count-input" name="guests" value="1">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Plus One Request Option -->
+              <div class="form-group plus-one-request-wrapper">
+                <label class="custom-checkbox-row plus-one-checkbox-row">
+                  <input type="checkbox" id="check-plus-one" name="plus_one_request">
+                  <span class="checkbox-box"></span>
+                  <span style="font-weight: 600; color: var(--dark-rose);">Request a Plus One 👥</span>
+                </label>
+                <p class="plus-one-note-text">
+                  To help us accommodate everyone comfortably, our guest list is finalized. If you'd like to request a
+                  companion, please let us know their name and we'll do our best to accommodate!
+                </p>
+                <div id="plus-one-name-wrap" style="display: none; margin-top: 10px;">
+                  <input type="text" id="plus-one-name" name="plus_one_name" class="form-input"
+                    placeholder="Companion's Full Name">
+                </div>
+              </div>
+            </div>
+
+            <!-- Message / Blessing -->
+            <div class="form-group">
+              <label for="attendee-message" class="form-label">1st Birthday &amp; Christening Blessing for Baby
+                Arshea</label>
+              <textarea id="attendee-message" name="message" class="form-textarea"
+                placeholder="Share a sweet prayer or 1st birthday wish for baby Arshea..."></textarea>
+            </div>
+
+            <button type="submit" id="btn-submit-rsvp" class="btn-submit-rsvp">Confirm Attendance 🌼</button>
+          </form>
+        </div>
+
+        <!-- Silhouette Botanical Floral Graphics at the Bottom (matching Screenshot 2) -->
+        <div class="canva-botanical-bottom" aria-hidden="true">
+          <svg viewBox="0 0 500 110" preserveAspectRatio="none" fill="#1f181c" xmlns="http://www.w3.org/2000/svg">
+            <!-- Left Wildflowers -->
+            <path
+              d="M15 110 C18 90, 22 75, 28 60 C24 59, 18 63, 12 70 C10 63, 15 57, 22 53 C16 49, 11 53, 8 45 C14 42, 21 47, 26 50 C25 40, 18 37, 22 31 C28 35, 31 41, 30 49 C35 45, 42 41, 45 47 C39 52, 34 53, 30 57 C34 73, 38 93, 42 110 Z" />
+            <path
+              d="M55 110 C60 85, 68 62, 78 42 C70 40, 62 47, 54 54 C50 48, 56 40, 65 36 C58 32, 52 37, 50 28 C57 25, 64 30, 70 34 C72 24, 66 20, 71 14 C78 18, 80 26, 79 34 C85 30, 92 27, 96 33 C90 38, 85 39, 81 42 C86 64, 90 87, 95 110 Z" />
+            <!-- Flower petals cluster -->
+            <circle cx="85" cy="30" r="7" />
+            <circle cx="76" cy="24" r="6" />
+            <circle cx="94" cy="24" r="6" />
+            <circle cx="80" cy="38" r="6" />
+            <circle cx="91" cy="38" r="6" />
+            <!-- Center foliage -->
+            <path
+              d="M120 110 C130 82, 142 54, 155 30 C145 27, 134 37, 122 47 C116 39, 126 29, 138 24 C130 19, 122 25, 118 15 C128 12, 137 18, 145 23 C148 11, 140 5, 147 0 C155 5, 158 14, 156 24 C164 19, 173 15, 178 22 C170 28, 163 30, 158 33 C164 60, 170 86, 178 110 Z" />
+            <!-- Middle right florals -->
+            <path
+              d="M220 110 C228 84, 238 60, 250 40 C242 37, 232 46, 222 54 C216 47, 225 38, 236 34 C230 28, 222 33, 220 24 C229 22, 237 27, 243 32 C246 21, 239 16, 245 10 C252 15, 254 23, 253 32 C260 28, 268 25, 272 31 C265 36, 259 37, 255 40 C260 62, 265 87, 270 110 Z" />
+            <circle cx="260" cy="27" r="8" />
+            <circle cx="249" cy="20" r="6" />
+            <circle cx="271" cy="20" r="6" />
+            <circle cx="253" cy="35" r="6" />
+            <circle cx="267" cy="35" r="6" />
+            <!-- Right foliage -->
+            <path
+              d="M330 110 C340 84, 350 60, 362 37 C355 34, 345 42, 335 50 C330 44, 338 36, 348 32 C342 27, 335 31, 332 22 C340 20, 348 25, 354 30 C356 20, 350 15, 355 9 C362 13, 365 21, 363 30 C370 26, 378 23, 382 29 C375 34, 370 35, 366 38 C370 61, 375 86, 380 110 Z" />
+            <!-- Far right tall botanicals -->
+            <path
+              d="M430 110 C425 78, 418 50, 410 16 C418 21, 426 26, 432 36 C436 24, 442 34, 440 46 C448 38, 452 46, 448 58 C456 51, 460 61, 452 71 C458 81, 450 91, 442 110 Z" />
+            <path
+              d="M470 110 C468 88, 465 64, 460 36 C468 41, 475 48, 480 58 C485 48, 490 56, 488 68 C495 61, 498 71, 492 84 C496 94, 490 104, 485 110 Z" />
+          </svg>
+        </div>
+
       </div>
     </section>
 
@@ -322,14 +876,24 @@
   <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="HD Photo View">
     <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
     <div class="lightbox-dialog">
-      <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close HD photo preview">&times;</button>
+      <button type="button" class="lightbox-close" id="lightbox-close"
+        aria-label="Close HD photo preview">&times;</button>
+
+      <!-- Prev/Next Navigation Controls -->
+      <button type="button" class="lightbox-nav-btn lightbox-prev" id="lightbox-prev" aria-label="Previous photo"
+        title="Previous photo (Left Arrow)">&#10094;</button>
+      <button type="button" class="lightbox-nav-btn lightbox-next" id="lightbox-next" aria-label="Next photo"
+        title="Next photo (Right Arrow)">&#10095;</button>
+
       <div class="lightbox-img-frame">
         <img id="lightbox-img" src="" alt="Baby Arshea HD View" class="lightbox-full-img">
       </div>
       <div class="lightbox-caption-bar" id="lightbox-caption"></div>
+      <div class="lightbox-counter" id="lightbox-counter">Photo 1 of 17</div>
     </div>
   </div>
 
   <script src="js/script.js"></script>
 </body>
+
 </html>
