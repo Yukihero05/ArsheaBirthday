@@ -951,26 +951,26 @@ section {
 
 .milestones-pinned-section {
   position: relative;
-  height: 300vh;
-  margin: 30px 0 0;
+  height: 480vh;
+  margin: 10px 0 0;
 }
 
 .milestones-sticky-wrapper {
   position: sticky;
-  top: max(15px, calc(50vh - 275px));
+  top: 20px;
   height: auto;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 5;
-  padding: 10px 0 16px;
+  padding: 8px 0 14px;
   background: transparent;
 }
 
 .milestones-section-header {
   text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   flex-shrink: 0;
   padding: 0 16px;
 }
@@ -980,7 +980,7 @@ section {
   height: 5px;
   background: rgba(216, 92, 124, 0.16);
   border-radius: 10px;
-  margin: 10px auto 6px;
+  margin: 8px auto 6px;
   overflow: hidden;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
 }
@@ -990,7 +990,7 @@ section {
   width: 8%;
   background: linear-gradient(90deg, #f48fb1, #d85c7c);
   border-radius: 10px;
-  transition: width 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: width 0.38s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 0 8px rgba(216, 92, 124, 0.4);
 }
 
@@ -998,23 +998,14 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  font-size: 0.78rem;
+  margin-top: 2px;
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
 
 .milestones-scroll-hint {
   font-weight: 500;
   letter-spacing: 0.3px;
-}
-
-.milestones-counter-badge {
-  background: rgba(216, 92, 124, 0.12);
-  color: var(--dark-rose);
-  font-weight: 700;
-  padding: 2px 10px;
-  border-radius: 20px;
-  border: 1px solid rgba(216, 92, 124, 0.22);
 }
 
 /* Horizontal Track Viewport & Reel */
@@ -1024,26 +1015,26 @@ section {
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   overflow: hidden;
-  padding: 14px 0 20px;
+  padding: 12px 0 18px;
   touch-action: pan-y pinch-zoom;
 }
 
 .milestones-track {
   display: flex;
-  gap: 22px;
-  padding: 0 max(24px, calc(50vw - 145px));
+  gap: 26px;
+  padding: 0 max(24px, calc(50vw - 200px));
   will-change: transform;
-  transition: transform 0.08s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .milestone-reel-card {
-  flex: 0 0 clamp(230px, 68vw, 290px);
+  flex: 0 0 clamp(318px, 75vw, 400px);
   scroll-snap-align: center;
   background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 12px 32px rgba(216, 92, 124, 0.14), 0 2px 8px rgba(0, 0, 0, 0.03);
+  border-radius: 22px;
+  box-shadow: 0 14px 36px rgba(216, 92, 124, 0.16), 0 2px 8px rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(216, 92, 124, 0.22);
-  padding: 10px 10px 14px;
+  padding: 12px 12px 16px;
   cursor: pointer;
   position: relative;
   text-align: center;
@@ -1055,8 +1046,20 @@ section {
 
 .milestone-reel-card:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 18px 45px rgba(216, 92, 124, 0.26);
+  box-shadow: 0 20px 48px rgba(216, 92, 124, 0.28);
   border-color: rgba(216, 92, 124, 0.4);
+}
+
+.milestone-reel-card .milestone-badge {
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  top: 10px;
+  left: 10px;
+}
+
+.milestone-reel-card .polaroid-title {
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 /* Reel Navigation Buttons */
@@ -1100,10 +1103,10 @@ section {
 
 @media (max-width: 600px) {
   .milestones-pinned-section {
-    height: 260vh;
+    height: 420vh;
   }
   .milestones-sticky-wrapper {
-    top: 15px;
+    top: 12px;
   }
   .reel-nav-btn {
     width: 36px;
@@ -1117,11 +1120,20 @@ section {
     right: 8px;
   }
   .milestones-track {
-    gap: 14px;
-    padding: 0 18px;
+    gap: 16px;
+    padding: 0 max(16px, calc(50vw - 165px));
   }
   .milestone-reel-card {
-    flex: 0 0 240px;
+    flex: 0 0 clamp(290px, 85vw, 332px);
+    padding: 10px 10px 14px;
+    border-radius: 18px;
+  }
+  .milestone-reel-card .milestone-badge {
+    font-size: 0.72rem;
+    padding: 3px 8px;
+  }
+  .milestone-reel-card .polaroid-title {
+    font-size: 1.15rem;
   }
 }
 
@@ -1155,7 +1167,7 @@ section {
   display: flex;
   width: 100%;
   will-change: transform;
-  transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .photoshoot-slide {

@@ -437,7 +437,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const milestonesTrack = document.getElementById('milestones-track');
   const milestonesViewport = document.getElementById('milestones-viewport');
   const milestonesProgressBar = document.getElementById('milestones-progress-bar');
-  const milestonesCounter = document.getElementById('milestones-counter');
   const milestonesPrev = document.getElementById('milestones-prev');
   const milestonesNext = document.getElementById('milestones-next');
   const milestonesStickyWrapper = document.querySelector('.milestones-sticky-wrapper');
@@ -452,10 +451,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const sectionRect = milestonesSection.getBoundingClientRect();
     const wrapperHeight = milestonesStickyWrapper ? milestonesStickyWrapper.offsetHeight : 520;
-    const stickyTop = milestonesStickyWrapper ? milestonesStickyWrapper.offsetTop : 15;
+    const stickyTop = milestonesStickyWrapper ? (parseFloat(window.getComputedStyle(milestonesStickyWrapper).top) || 20) : 20;
 
     // Total distance the section stays pinned while scrolling down
-    const totalDist = milestonesSection.offsetHeight - wrapperHeight - stickyTop;
+    const totalDist = milestonesSection.offsetHeight - wrapperHeight;
 
     if (totalDist <= 0) {
       milestonesTrack.style.transform = 'translateX(0px)';
@@ -477,16 +476,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (milestonesProgressBar) {
       milestonesProgressBar.style.width = `${Math.max(8, progress * 100)}%`;
     }
-
-    if (milestonesCounter) {
-      const cardCount = cards.length;
-      const index = Math.min(cardCount - 1, Math.round(progress * (cardCount - 1)));
-      const cardNames = [
-        'Newborn', '1 Month', '2 Months', '3 Months', '4 Months', '5 Months',
-        '6 Months', '7 Months', '8 Months', '9 Months', '10 Months', '11 Months'
-      ];
-      milestonesCounter.textContent = `${cardNames[index] || ('Month ' + (index + 1))} (${index + 1} of ${cardCount})`;
-    }
   }
 
   window.addEventListener('scroll', () => {
@@ -506,8 +495,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (milestonesNext && milestonesSection) {
     milestonesNext.addEventListener('click', () => {
       const wrapperHeight = milestonesStickyWrapper ? milestonesStickyWrapper.offsetHeight : 520;
-      const stickyTop = milestonesStickyWrapper ? milestonesStickyWrapper.offsetTop : 15;
-      const totalDist = milestonesSection.offsetHeight - wrapperHeight - stickyTop;
+      const totalDist = milestonesSection.offsetHeight - wrapperHeight;
       const step = totalDist / 11;
       window.scrollBy({ top: step, behavior: 'smooth' });
     });
@@ -516,8 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (milestonesPrev && milestonesSection) {
     milestonesPrev.addEventListener('click', () => {
       const wrapperHeight = milestonesStickyWrapper ? milestonesStickyWrapper.offsetHeight : 520;
-      const stickyTop = milestonesStickyWrapper ? milestonesStickyWrapper.offsetTop : 15;
-      const totalDist = milestonesSection.offsetHeight - wrapperHeight - stickyTop;
+      const totalDist = milestonesSection.offsetHeight - wrapperHeight;
       const step = totalDist / 11;
       window.scrollBy({ top: -step, behavior: 'smooth' });
     });
@@ -535,7 +522,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const diffX = reelTouchStartX - touchX;
       reelTouchStartX = touchX;
       if (Math.abs(diffX) > 2) {
-        window.scrollBy({ top: diffX * 1.4, behavior: 'auto' });
+        window.scrollBy({ top: diffX * 1.0, behavior: 'auto' });
       }
     }, { passive: true });
   }
@@ -580,7 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!isAutoSwipePaused) {
         nextPhotoshootSlide();
       }
-    }, 3500); // Auto-advance every 3.5 seconds
+    }, 1000); // Automatic swipe to the right every 1 second
   }
 
   function stopAutoSwipe() {
@@ -600,11 +587,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Pause on hover / touch
+  // Touch Swipe on Fairy Photoshoot Viewport
   if (photoshootViewport) {
-    photoshootViewport.addEventListener('mouseenter', () => { isAutoSwipePaused = true; });
-    photoshootViewport.addEventListener('mouseleave', () => { isAutoSwipePaused = false; });
-
     let psTouchStartX = 0;
     let psTouchEndX = 0;
     photoshootViewport.addEventListener('touchstart', (e) => {
@@ -622,8 +606,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           nextPhotoshootSlide();
         }
-        startAutoSwipe();
       }
+      startAutoSwipe();
     }, { passive: true });
 
     // Vertical wheel scroll over fairy photoshoots triggers horizontal swipe transitions
@@ -657,7 +641,7 @@ document.addEventListener('DOMContentLoaded', () => {
           stopAutoSwipe();
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.05 });
     observer.observe(photoshootSection);
   } else {
     startAutoSwipe();
@@ -701,6 +685,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openLightboxWithItems(items, startIndex = 0) {
     if (!lightboxModal || !lightboxImg || !items || !items.length) return;
+    stopAutoSwipe();
     activeGalleryItems = items;
     currentPhotoIndex = startIndex;
     updateLightboxPhoto();
@@ -730,6 +715,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxModal.classList.remove('active');
     lightboxModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    startAutoSwipe();
   }
 
   if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
